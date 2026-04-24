@@ -113,8 +113,9 @@ section{padding:4.5rem 2.5rem}
 
 /* ── EHRENAMT ── */
 .volunteer{background:var(--gold);border-bottom:2px solid var(--border)}
-.vol-img-full img{width:100%;display:block;border:2px solid var(--border);object-fit:cover;object-position:top;max-height:440px;margin-bottom:1.5rem}
-.vol-cards{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.vol-grid{display:grid;grid-template-columns:280px 1fr;gap:2rem;align-items:start;margin-top:2rem}
+.vol-img img{width:100%;display:block;border:2px solid var(--border);object-fit:cover;object-position:top}
+.vol-cards{display:flex;flex-direction:column;gap:1.2rem}
 .vol-card{background:var(--white);border:2px solid var(--border);padding:1.5rem 1.8rem}
 .vol-card-label{font-size:.65rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
 .vol-card h3{font-size:.95rem;font-weight:800;color:var(--black);margin-bottom:.8rem}
@@ -151,8 +152,7 @@ footer .f-legal:hover{color:var(--gold)}
 
 /* ── RESPONSIVE ── */
 @media(max-width:768px){
-  .hero-grid,.about-grid,.tl-ehrenamt{grid-template-columns:1fr}
-  .vol-cards{grid-template-columns:1fr}
+  .hero-grid,.about-grid,.vol-grid,.tl-ehrenamt{grid-template-columns:1fr}
   .tl-item{grid-template-columns:1fr}
   .tl-left{border-right:none;border-bottom:1px solid rgba(240,224,64,0.1)}
   .nav-links{display:none}
@@ -160,6 +160,7 @@ footer .f-legal:hover{color:var(--gold)}
   .hamburger{display:flex}
   .nav-contact-icon{display:flex}
   .hero-top{flex-direction:column;align-items:flex-start}
+  .vol-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -204,15 +205,25 @@ footer .f-legal:hover{color:var(--gold)}
         <div class="hero-role">Executive Leader für Transformation</div>
         <div class="hero-name">Raphael<br>Doderer</div>
       </div>
-      <div class="hero-badge">&#9670;&ensp;Offen für neue Führungsaufgaben</div>
+      <div class="hero-badge">&#9670;&ensp;Offen für neue Aufgaben</div>
     </div>
     <div class="hero-grid reveal">
       <div class="hero-img-wrap">
         <img src="raphael-doderer.jpeg" alt="Raphael Doderer">
       </div>
       <div class="hero-main-text">
-        <p class="hero-lead">Strukturgeber &amp; Transformationsarchitekt für Marketing, Kommunikation und digitale Markenentwicklung – mit 20 Jahren Erfahrung und dem Anspruch, Menschen, Organisationen und Unternehmen gemeinsam voranzubringen.</p>
-        <p class="hero-sub">Ich kombiniere die Ruhe und Entscheidungsstärke aus 25 Jahren Krisenmanagement im Bevölkerungsschutz mit moderner, transformativer Business-Führung. Mein Ziel: Teams nicht nur zu steuern, sondern sie zu befähigen, in volatilen Märkten über sich hinauszuwachsen.</p>
+        <p class="hero-lead">Strukturgeber &amp; Transformationsarchitekt<br>
+          <span style="font-weight:500;opacity:.55">für Marketing · Kommunikation · Digitale Markenentwicklung</span>
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.2rem">
+          <span style="background:var(--black);color:var(--gold);font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .85rem;border-radius:2rem">CMO</span>
+          <span style="background:var(--black);color:var(--gold);font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .85rem;border-radius:2rem">CCO</span>
+          <span style="background:var(--black);color:var(--gold);font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .85rem;border-radius:2rem">CDO</span>
+          <span style="background:transparent;color:var(--black);border:2px solid var(--black);font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .85rem;border-radius:2rem">Marketing</span>
+          <span style="background:transparent;color:var(--black);border:2px solid var(--black);font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .85rem;border-radius:2rem">Digitale Transformation</span>
+          <span style="background:transparent;color:var(--black);border:2px solid var(--black);font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .85rem;border-radius:2rem">Kommunikation</span>
+        </div>
+        <p class="hero-sub">20+ Jahre Erfahrung an der Schnittstelle von Marke, Digitalisierung und Unternehmenskommunikation. Ich kombiniere die Entscheidungsstärke aus 25 Jahren Krisenmanagement im Bevölkerungsschutz mit transformativer Business-Führung – und bringe Struktur dorthin, wo Wandel gelingt.</p>
         <div class="hero-ctas">
           <a href="#contact" class="btn-black">Jetzt Kontakt aufnehmen</a>
           <a href="https://linkedin.com/in/raphael-doderer" target="_blank" class="btn-outline">LinkedIn-Profil</a>
@@ -471,35 +482,38 @@ footer .f-legal:hover{color:var(--gold)}
       <div class="sec-label">Mehr als der Job</div>
       <h2 class="sec-title">Ehrenamtliches Engagement</h2>
     </div>
-    <!-- Foto über beide Karten -->
-    <div class="vol-img-full reveal">
-      <img src="raphael-doderer-johanniter.jpeg" alt="Raphael Doderer – Johanniter">
-    </div>
-    <!-- Zwei Karten nebeneinander -->
-    <div class="vol-cards reveal">
-      <div class="vol-card">
-        <div class="vol-card-label">Im Einsatz &amp; operative Führung</div>
-        <h3>Johanniter-Unfall-Hilfe in Augsburg</h3>
-        <p>Aktiver Rettungssanitäter im Rettungsdienst und Zugführer im Bevölkerungsschutz – praktisch im Dienst auf Rettungswagen und im Krankentransport, bei Sanitätswachdiensten und SEG-Einsätzen. Führung unter realen Bedingungen: unter Druck klar denken, schnell entscheiden, Menschenleben verantworten.</p>
-        <p>Was im Einsatz funktioniert, funktioniert auch im Unternehmen – Struktur, Kommunikation und Vertrauen unter Druck.</p>
-        <div class="vol-tags">
-          <span class="tag">Rettungssanitäter</span>
-          <span class="tag">Zugführer</span>
-          <span class="tag">25 Jahre</span>
-        </div>
+    <!-- Foto links, Karten rechts -->
+    <div class="vol-grid reveal">
+      <div class="vol-img">
+        <img src="raphael-doderer-johanniter.jpeg" alt="Raphael Doderer – Johanniter">
       </div>
-      <div class="vol-card">
-        <div class="vol-card-label">Strategie &amp; Vernetzung</div>
-        <h3>Arbeitsgemeinschaft der Augsburger Hilfsorganisationen · Medienbeauftragter im Vorstand</h3>
-        <p>Ehrenamtlicher Medienbeauftragter im Vorstand des Bündnisses von ASB, BRK, DLRG, Johannitern und Maltesern sowie THW. Kommunikationsstrategie, Öffentlichkeitsarbeit und Vernetzung auf überorganisatorischer Ebene – als Networker und Stratege.</p>
-        <p>Bei Großschadenslagen übernehme ich zusätzlich Führungsverantwortung im Einsatzstab – Schnittstelle zwischen operativer Lage und strategischer Kommunikation (u.a. Weihnachtsbombe mit internationaler Berichterstattung).</p>
-        <div class="vol-tags">
-          <span class="tag">Medienbeauftragter</span>
-          <span class="tag">Vorstand</span>
-          <span class="tag">Stabsdienst</span>
-          <span class="tag">Krisenkommunikation</span>
-          <span class="tag">Vernetzung</span>
-          <span class="tag">17 Jahre</span>
+      <div class="vol-cards">
+        <!-- 1. Operativ -->
+        <div class="vol-card">
+          <div class="vol-card-label">Im Einsatz &amp; operative Führung</div>
+          <h3>Johanniter-Unfall-Hilfe in Augsburg</h3>
+          <p>Aktiver Rettungssanitäter im Rettungsdienst und Zugführer im Bevölkerungsschutz – praktisch im Dienst auf Rettungswagen und im Krankentransport, bei Sanitätswachdiensten und SEG-Einsätzen. Führung unter realen Bedingungen: unter Druck klar denken, schnell entscheiden, Menschenleben verantworten.</p>
+          <p>Was im Einsatz funktioniert, funktioniert auch im Unternehmen – Struktur, Kommunikation und Vertrauen unter Druck.</p>
+          <div class="vol-tags">
+            <span class="tag">Rettungssanitäter</span>
+            <span class="tag">Zugführer</span>
+            <span class="tag">25 Jahre</span>
+          </div>
+        </div>
+        <!-- 2. Strategisch -->
+        <div class="vol-card">
+          <div class="vol-card-label">Strategie &amp; Vernetzung</div>
+          <h3>Arbeitsgemeinschaft der Augsburger Hilfsorganisationen · Medienbeauftragter im Vorstand</h3>
+          <p>Ehrenamtlicher Medienbeauftragter im Vorstand des Bündnisses von ASB, BRK, DLRG, Johannitern und Maltesern sowie THW. Kommunikationsstrategie, Öffentlichkeitsarbeit und Vernetzung auf überorganisatorischer Ebene – als Networker und Stratege.</p>
+          <p>Bei Großschadenslagen übernehme ich zusätzlich Führungsverantwortung im Einsatzstab – Schnittstelle zwischen operativer Lage und strategischer Kommunikation (u.a. Weihnachtsbombe mit internationaler Berichterstattung).</p>
+          <div class="vol-tags">
+            <span class="tag">Medienbeauftragter</span>
+            <span class="tag">Vorstand</span>
+            <span class="tag">Stabsdienst</span>
+            <span class="tag">Krisenkommunikation</span>
+            <span class="tag">Vernetzung</span>
+            <span class="tag">17 Jahre</span>
+          </div>
         </div>
       </div>
     </div>
