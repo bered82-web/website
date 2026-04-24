@@ -70,6 +70,22 @@ section{padding:4.5rem 2.5rem}
 .stat-card .n{font-size:2rem;font-weight:900;color:var(--black);display:block;letter-spacing:-.03em}
 .stat-card .l{font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-top:.3rem;font-weight:600}
 
+/* ── MOTTO SECTION ── */
+.motto-section{position:relative;min-height:520px;display:flex;align-items:center;justify-content:center;overflow:hidden;border-top:2px solid #111;border-bottom:2px solid #111}
+.motto-bg{position:absolute;inset:0;background-image:url('raphael-doderer-einsatz.jpeg');background-size:cover;background-position:center 30%;filter:grayscale(40%) brightness(0.35);transform:scale(1.03);transition:transform 8s ease}
+.motto-section:hover .motto-bg{transform:scale(1.06)}
+.motto-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(17,17,17,0.6) 0%,rgba(240,224,64,0.08) 50%,rgba(17,17,17,0.7) 100%)}
+.motto-accent{position:absolute;left:2.5rem;top:50%;transform:translateY(-50%);width:3px;height:120px;background:linear-gradient(to bottom,transparent,#F0E040,transparent)}
+.motto-content{position:relative;z-index:2;text-align:center;padding:4rem 2.5rem;max-width:800px}
+.motto-eyebrow{font-size:.68rem;font-weight:800;letter-spacing:.25em;text-transform:uppercase;color:rgba(240,224,64,0.6);margin-bottom:1.5rem}
+.motto-quote{font-size:clamp(2rem,5vw,3.8rem);font-weight:900;color:#fff;line-height:1.05;letter-spacing:-.03em;margin-bottom:1.2rem}
+.motto-quote em{color:#F0E040;font-style:normal}
+.motto-sub{font-size:.92rem;color:rgba(255,255,255,0.55);line-height:1.75;max-width:520px;margin:0 auto 2rem}
+.motto-divider{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1.5rem}
+.motto-divider-line{width:60px;height:1px;background:rgba(240,224,64,0.3)}
+.motto-divider-dot{width:6px;height:6px;border-radius:50%;background:#F0E040}
+.motto-badge{position:absolute;bottom:1.5rem;right:2rem;font-size:.65rem;color:rgba(255,255,255,0.25);letter-spacing:.1em;text-transform:uppercase}
+
 /* ── KOMPETENZEN ── */
 .competencies{background:var(--gold);border-bottom:2px solid var(--border)}
 .comp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0;border:2px solid var(--border);background:var(--border);margin-top:2rem}
@@ -260,6 +276,24 @@ footer .f-legal:hover{color:var(--gold)}
       </div>
     </div>
   </div>
+</section>
+
+<!-- ── MOTTO & EINSATZFOTO ── -->
+<section class="motto-section">
+  <div class="motto-bg"></div>
+  <div class="motto-overlay"></div>
+  <div class="motto-accent"></div>
+  <div class="motto-content">
+    <div class="motto-eyebrow">Haltung &amp; Antrieb</div>
+    <div class="motto-quote">Miteinander<br><em>füreinander</em><br>da sein.</div>
+    <p class="motto-sub">Ob im Führungsstab eines Großeinsatzes oder als Leiter eines Transformationsprojekts – mein Verständnis von Führung ist dasselbe: Menschen befähigen, Strukturen schaffen, Verantwortung übernehmen.</p>
+    <div class="motto-divider">
+      <div class="motto-divider-line"></div>
+      <div class="motto-divider-dot"></div>
+      <div class="motto-divider-line"></div>
+    </div>
+  </div>
+  <div class="motto-badge">Hochwasser-Einsatz Augsburg 2024</div>
 </section>
 
 <!-- ── KERNKOMPETENZEN ── -->
