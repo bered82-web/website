@@ -15,12 +15,25 @@
 html{scroll-behavior:smooth}
 body{font-family:'Segoe UI',system-ui,sans-serif;color:var(--black);background:var(--light);overflow-x:hidden}
 
+/* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--gold);border-bottom:2px solid var(--border);padding:.7rem 2.5rem;display:flex;justify-content:space-between;align-items:center}
 .nav-logo{font-size:.85rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--black)}
 .nav-links{display:flex;gap:1.8rem;list-style:none}
 .nav-links a{color:var(--black);text-decoration:none;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;transition:opacity .15s}
 .nav-links a:hover{opacity:.55}
+.nav-right{display:flex;align-items:center;gap:.8rem}
+.nav-contact-icon{display:none;align-items:center;justify-content:center;width:36px;height:36px}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:.3rem}
+.hamburger span{display:block;width:22px;height:2px;background:var(--black);transition:all .3s;border-radius:2px}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:49px;left:0;right:0;background:var(--gold);border-bottom:2px solid var(--border);padding:1rem 2.5rem;z-index:99}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;color:var(--black);text-decoration:none;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:.65rem 0;border-bottom:1px solid rgba(0,0,0,0.08)}
+.mobile-menu a:last-child{border-bottom:none}
 
+/* ── HERO ── */
 .hero{background:var(--gold);padding:6.5rem 2.5rem 4rem;border-bottom:2px solid var(--border)}
 .hero-inner{max-width:1060px;margin:0 auto}
 .hero-top{border-bottom:2px solid var(--border);padding-bottom:1.5rem;margin-bottom:2.5rem;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem}
@@ -28,9 +41,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--gold);borde
 .hero-name{font-size:clamp(3rem,6vw,5rem);font-weight:900;line-height:.95;letter-spacing:-.03em;color:var(--black)}
 .hero-badge{background:var(--black);color:var(--gold);font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.35rem .9rem;border-radius:2rem;white-space:nowrap;align-self:flex-end}
 .hero-grid{display:grid;grid-template-columns:220px 1fr;gap:3rem;align-items:start}
-.hero-img-wrap{position:relative}
 .hero-img-wrap img{width:100%;display:block;border:2px solid var(--border);object-fit:cover;object-position:top;aspect-ratio:3/4}
-.vol-img img{width:100%;display:block;border:2px solid var(--border);object-fit:cover;object-position:top;aspect-ratio:4/3}
 .hero-main-text{padding-top:.3rem}
 .hero-lead{font-size:1.05rem;font-weight:700;color:var(--black);line-height:1.55;margin-bottom:1rem}
 .hero-sub{font-size:.88rem;color:var(--dark);line-height:1.8;margin-bottom:1.5rem}
@@ -40,12 +51,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--gold);borde
 .btn-outline{background:transparent;color:var(--black);padding:.65rem 1.6rem;border-radius:.25rem;text-decoration:none;font-weight:700;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;border:2px solid var(--black);transition:all .2s}
 .btn-outline:hover{background:var(--black);color:var(--gold)}
 
+/* ── SECTIONS ── */
 section{padding:4.5rem 2.5rem}
 .section-inner{max-width:1060px;margin:0 auto}
 .sec-head{border-bottom:2px solid var(--border);padding-bottom:.8rem;margin-bottom:2.5rem;display:flex;align-items:baseline;gap:1.5rem}
 .sec-label{font-size:.65rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
 .sec-title{font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:900;color:var(--black);letter-spacing:-.02em}
 
+/* ── ÜBER MICH ── */
 .about{background:var(--white);border-bottom:2px solid var(--border)}
 .about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:4rem;align-items:start}
 .about-grid p{color:var(--muted);line-height:1.85;margin-bottom:1rem;font-size:.9rem}
@@ -57,6 +70,7 @@ section{padding:4.5rem 2.5rem}
 .stat-card .n{font-size:2rem;font-weight:900;color:var(--black);display:block;letter-spacing:-.03em}
 .stat-card .l{font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-top:.3rem;font-weight:600}
 
+/* ── KOMPETENZEN ── */
 .competencies{background:var(--gold);border-bottom:2px solid var(--border)}
 .comp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0;border:2px solid var(--border);background:var(--border);margin-top:2rem}
 .comp-card{background:var(--gold);padding:1.6rem;transition:background .2s}
@@ -66,6 +80,7 @@ section{padding:4.5rem 2.5rem}
 .comp-card h3{font-size:.85rem;font-weight:800;color:var(--black);margin-bottom:.5rem;letter-spacing:.02em;text-transform:uppercase;transition:color .2s}
 .comp-card p{font-size:.78rem;color:var(--dark);line-height:1.65;transition:color .2s}
 
+/* ── TIMELINE ── */
 .tl-section{background:#1c1c1c;border-bottom:2px solid var(--gold)}
 .tl-section .sec-title{color:#fff}
 .tl-section .sec-label{color:var(--gold)}
@@ -86,6 +101,7 @@ section{padding:4.5rem 2.5rem}
 .tl-ea h4{color:var(--gold);font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;margin-bottom:.5rem;font-weight:800}
 .tl-ea p{color:rgba(255,255,255,0.7);font-size:.8rem;line-height:1.7}
 
+/* ── IMPACT ── */
 .impact{background:var(--white);border-bottom:2px solid var(--border)}
 .impact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0;border:2px solid var(--border);background:var(--border);margin-top:2rem}
 .impact-card{background:var(--white);padding:1.8rem;transition:background .2s}
@@ -95,10 +111,10 @@ section{padding:4.5rem 2.5rem}
 .impact-card h3{font-size:.82rem;font-weight:800;color:var(--black);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.03em}
 .impact-card p{font-size:.76rem;color:var(--muted);line-height:1.6}
 
+/* ── EHRENAMT ── */
 .volunteer{background:var(--gold);border-bottom:2px solid var(--border)}
-.vol-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:3rem;align-items:start;margin-top:2rem}
-.vol-img img{width:100%;display:block;border:2px solid var(--border)}
-.vol-cards{display:flex;flex-direction:column;gap:1.2rem}
+.vol-img-full img{width:100%;display:block;border:2px solid var(--border);object-fit:cover;object-position:top;max-height:440px;margin-bottom:1.5rem}
+.vol-cards{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
 .vol-card{background:var(--white);border:2px solid var(--border);padding:1.5rem 1.8rem}
 .vol-card-label{font-size:.65rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
 .vol-card h3{font-size:.95rem;font-weight:800;color:var(--black);margin-bottom:.8rem}
@@ -106,6 +122,7 @@ section{padding:4.5rem 2.5rem}
 .vol-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.6rem}
 .tag{background:var(--black);color:var(--gold);border-radius:2rem;padding:.25rem .8rem;font-size:.7rem;font-weight:600;letter-spacing:.06em}
 
+/* ── KONTAKT ── */
 .contact{background:#1c1c1c}
 .contact .sec-title{color:#fff}
 .contact .sec-label{color:var(--gold)}
@@ -121,24 +138,34 @@ section{padding:4.5rem 2.5rem}
 .c-val{color:rgba(255,255,255,0.9);font-size:.9rem;cursor:pointer;transition:color .2s;text-decoration:none;display:block}
 .c-val:hover{color:var(--gold)}
 
-footer{background:#000;padding:1.5rem 2.5rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(240,224,64,0.15)}
+/* ── FOOTER ── */
+footer{background:#000;padding:1.5rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;border-top:1px solid rgba(240,224,64,0.15)}
 footer p{color:rgba(255,255,255,0.18);font-size:.72rem;letter-spacing:.08em}
 footer .f-motto{color:rgba(240,224,64,0.3);font-size:.72rem;font-style:italic}
+footer .f-legal{color:rgba(240,224,64,0.3);font-size:.72rem;text-decoration:none;cursor:pointer}
+footer .f-legal:hover{color:var(--gold)}
 
+/* ── ANIMATIONEN ── */
 .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
 .reveal.visible{opacity:1;transform:none}
 
+/* ── RESPONSIVE ── */
 @media(max-width:768px){
-  .hero-grid,.about-grid,.vol-grid,.tl-ehrenamt{grid-template-columns:1fr}
+  .hero-grid,.about-grid,.tl-ehrenamt{grid-template-columns:1fr}
+  .vol-cards{grid-template-columns:1fr}
   .tl-item{grid-template-columns:1fr}
   .tl-left{border-right:none;border-bottom:1px solid rgba(240,224,64,0.1)}
   .nav-links{display:none}
+  .nav-right{display:flex}
+  .hamburger{display:flex}
+  .nav-contact-icon{display:flex}
   .hero-top{flex-direction:column;align-items:flex-start}
 }
 </style>
 </head>
 <body>
 
+<!-- ── NAVIGATION ── -->
 <nav>
   <div class="nav-logo">Raphael Doderer</div>
   <ul class="nav-links">
@@ -149,8 +176,27 @@ footer .f-motto{color:rgba(240,224,64,0.3);font-size:.72rem;font-style:italic}
     <li><a href="#volunteer">Ehrenamt</a></li>
     <li><a href="#contact">Kontakt</a></li>
   </ul>
+  <div class="nav-right">
+    <a class="nav-contact-icon" href="#contact" aria-label="Kontakt">
+      <svg viewBox="0 0 44 44" fill="none" width="32" height="32"><rect width="44" height="44" rx="6" fill="#111"/><path d="M9 13H35C35.6 13 36 13.4 36 14V30C36 30.6 35.6 31 35 31H9C8.4 31 8 30.6 8 30V14C8 13.4 8.4 13 9 13ZM22 24L10 16V28H34V16L22 24ZM10.5 14L22 21.8L33.5 14H10.5Z" fill="#F0E040"/></svg>
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
 
+<!-- Mobile Menü -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#about" onclick="closeMobileMenu()">Über mich</a>
+  <a href="#competencies" onclick="closeMobileMenu()">Kompetenzen</a>
+  <a href="#timeline" onclick="closeMobileMenu()">Stationen</a>
+  <a href="#impact" onclick="closeMobileMenu()">Impact</a>
+  <a href="#volunteer" onclick="closeMobileMenu()">Ehrenamt</a>
+  <a href="#contact" onclick="closeMobileMenu()">Kontakt</a>
+</div>
+
+<!-- ── HERO ── -->
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-top reveal">
@@ -162,7 +208,7 @@ footer .f-motto{color:rgba(240,224,64,0.3);font-size:.72rem;font-style:italic}
     </div>
     <div class="hero-grid reveal">
       <div class="hero-img-wrap">
-        <img id="hero-photo" src="raphael-doderer.jpeg" alt="Raphael Doderer">
+        <img src="raphael-doderer.jpeg" alt="Raphael Doderer">
       </div>
       <div class="hero-main-text">
         <p class="hero-lead">Strukturgeber &amp; Transformationsarchitekt für Marketing, Kommunikation und digitale Markenentwicklung – mit 20 Jahren Erfahrung und dem Anspruch, Menschen, Organisationen und Unternehmen gemeinsam voranzubringen.</p>
@@ -176,6 +222,7 @@ footer .f-motto{color:rgba(240,224,64,0.3);font-size:.72rem;font-style:italic}
   </div>
 </section>
 
+<!-- ── ÜBER MICH ── -->
 <section class="about" id="about">
   <div class="section-inner">
     <div class="sec-head reveal">
@@ -194,7 +241,7 @@ footer .f-motto{color:rgba(240,224,64,0.3);font-size:.72rem;font-style:italic}
       </div>
       <div class="reveal">
         <div class="stat-grid">
-          <div class="stat-card"><span class="n">20+</span><div class="l">Jahre Berufs­erfahrung</div></div>
+          <div class="stat-card"><span class="n">20+</span><div class="l">Jahre Berufs&shy;erfahrung</div></div>
           <div class="stat-card"><span class="n">4</span><div class="l">Führungsrollen</div></div>
           <div class="stat-card"><span class="n">3</span><div class="l">Branchen</div></div>
           <div class="stat-card"><span class="n">25+</span><div class="l">Jahre Ehrenamt</div></div>
@@ -204,6 +251,7 @@ footer .f-motto{color:rgba(240,224,64,0.3);font-size:.72rem;font-style:italic}
   </div>
 </section>
 
+<!-- ── KERNKOMPETENZEN ── -->
 <section class="competencies" id="competencies">
   <div class="section-inner">
     <div class="sec-head reveal">
@@ -242,19 +290,20 @@ footer .f-motto{color:rgba(240,224,64,0.3);font-size:.72rem;font-style:italic}
         <p>Analyse und Neuaufbau von Abteilungsstrukturen, Prozessen und Governance-Modellen für Multi-Brand-Portfolios – mit dem Blick für das Machbare.</p>
       </div>
       <div class="comp-card reveal">
-  <span class="comp-icon">📊</span>
-  <h3>Budget- & Ressourcenverantwortung</h3>
-  <p>Steuerung von Media-Budgets bis 25 Mio. € p.a. sowie Relaunch-Budgets im mehrstelligen Millionenbereich – mit klarem Fokus auf ROI und messbaren Ergebnissen.</p>
-</div>
-<div class="comp-card reveal">
-  <span class="comp-icon">🔗</span>
-  <h3>Krisen- & Reputationsmanagement</h3>
-  <p>Aufbau und Leitung von Krisenstabs-Strukturen (u.a. Corona-Stab) sowie Etablierung von Reputationsmanagement-Systemen – beruflich wie ehrenamtlich bewährt.</p>
-</div>
+        <span class="comp-icon">📊</span>
+        <h3>Budget- & Ressourcenverantwortung</h3>
+        <p>Steuerung von Media-Budgets bis 25 Mio. € p.a. sowie Relaunch-Budgets im mehrstelligen Millionenbereich – mit klarem Fokus auf ROI und messbaren Ergebnissen.</p>
+      </div>
+      <div class="comp-card reveal">
+        <span class="comp-icon">🔗</span>
+        <h3>Krisen- & Reputationsmanagement</h3>
+        <p>Aufbau und Leitung von Krisenstabs-Strukturen (u.a. Corona-Stab) sowie Etablierung von Reputationsmanagement-Systemen – beruflich wie ehrenamtlich bewährt.</p>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- ── BERUFLICHE STATIONEN ── -->
 <section class="tl-section" id="timeline">
   <div class="section-inner">
     <div class="sec-head reveal">
@@ -328,6 +377,8 @@ footer .f-motto{color:rgba(240,224,64,0.3);font-size:.72rem;font-style:italic}
         </div>
       </div>
     </div>
+
+    <!-- Ehrenamt in der Timeline -->
     <div class="tl-ehrenamt reveal">
       <div class="tl-ea">
         <h4>Arbeitsgemeinschaft der Augsburger Hilfsorganisationen · Medienbeauftragter im Vorstand</h4>
@@ -339,21 +390,21 @@ footer .f-motto{color:rgba(240,224,64,0.3);font-size:.72rem;font-style:italic}
       </div>
     </div>
 
-    <div class="tl-ehrenamt" style="margin-top:1rem">
-  <div class="tl-ea">
-    <h4>Akademische Ausbildung · Universität Augsburg</h4>
-    <p>Sprach- und Politikwissenschaft, Staats- und Völkerrecht (M.A.) · 2002 – 2008</p>
-  </div>
-  <div class="tl-ea">
-    <h4>Berufsbegleitende Weiterbildung · BAW München</h4>
-    <p>Dialogmarketing-Fachwirt (BAW) · Bayerische Akademie für Werbung & Marketing · 2009 – 2010</p>
-  </div>
-</div>
+    <!-- Ausbildung -->
+    <div class="tl-ehrenamt reveal" style="margin-top:1rem">
+      <div class="tl-ea">
+        <h4>Akademische Ausbildung · Universität Augsburg</h4>
+        <p>Sprach- und Politikwissenschaft, Staats- und Völkerrecht (M.A.) · 2002 – 2008</p>
+      </div>
+      <div class="tl-ea">
+        <h4>Berufsbegleitende Weiterbildung · BAW München</h4>
+        <p>Dialogmarketing-Fachwirt (BAW) · Bayerische Akademie für Werbung &amp; Marketing · 2009 – 2010</p>
+      </div>
+    </div>
   </div>
 </section>
 
-
-  
+<!-- ── EXECUTIVE TRACK RECORD ── -->
 <section class="impact" id="impact">
   <div class="section-inner">
     <div class="sec-head reveal">
@@ -413,47 +464,49 @@ footer .f-motto{color:rgba(240,224,64,0.3);font-size:.72rem;font-style:italic}
   </div>
 </section>
 
+<!-- ── EHRENAMTLICHES ENGAGEMENT ── -->
 <section class="volunteer" id="volunteer">
   <div class="section-inner">
     <div class="sec-head reveal">
       <div class="sec-label">Mehr als der Job</div>
       <h2 class="sec-title">Ehrenamtliches Engagement</h2>
     </div>
-    <div class="vol-grid">
-      <div class="vol-img reveal">
-        <img id="vol-photo" src="raphael-doderer-johanniter.jpeg" alt="Raphael Doderer – Johanniter">
-      </div>
-      <div class="vol-cards reveal">
-        <div class="vol-card">
-          <div class="vol-card-label">Im Einsatz &amp; operative Führung</div>
-          <h3>Johanniter-Unfall-Hilfe in Augsburg</h3>
-          <p>Aktiver Rettungssanitäter im Rettungsdienst und Zugführer im Bevölkerungsschutz – praktisch im Dienst auf Rettungswagen und im Krankentransport, bei Sanitätswachdiensten und SEG-Einsätzen. Führung unter realen Bedingungen: unter Druck klar denken, schnell entscheiden, Menschenleben verantworten.</p>
-          <p>Was im Einsatz funktioniert, funktioniert auch im Unternehmen – Struktur, Kommunikation und Vertrauen unter Druck.</p>
-          <div class="vol-tags">
-            <span class="tag">Rettungssanitäter</span>
-            <span class="tag">Zugführer</span>
-            <span class="tag">25 Jahre</span>
-          </div>
+    <!-- Foto über beide Karten -->
+    <div class="vol-img-full reveal">
+      <img src="raphael-doderer-johanniter.jpeg" alt="Raphael Doderer – Johanniter">
+    </div>
+    <!-- Zwei Karten nebeneinander -->
+    <div class="vol-cards reveal">
+      <div class="vol-card">
+        <div class="vol-card-label">Im Einsatz &amp; operative Führung</div>
+        <h3>Johanniter-Unfall-Hilfe in Augsburg</h3>
+        <p>Aktiver Rettungssanitäter im Rettungsdienst und Zugführer im Bevölkerungsschutz – praktisch im Dienst auf Rettungswagen und im Krankentransport, bei Sanitätswachdiensten und SEG-Einsätzen. Führung unter realen Bedingungen: unter Druck klar denken, schnell entscheiden, Menschenleben verantworten.</p>
+        <p>Was im Einsatz funktioniert, funktioniert auch im Unternehmen – Struktur, Kommunikation und Vertrauen unter Druck.</p>
+        <div class="vol-tags">
+          <span class="tag">Rettungssanitäter</span>
+          <span class="tag">Zugführer</span>
+          <span class="tag">25 Jahre</span>
         </div>
-        <div class="vol-card">
-          <div class="vol-card-label">Strategie &amp; Vernetzung</div>
-          <h3>Arbeitsgemeinschaft der Augsburger Hilfsorganisationen · Medienbeauftragter im Vorstand</h3>
-          <p>Ehrenamtlicher Medienbeauftragter im Vorstand des Bündnisses von ASB, BRK, DLRG, Johannitern und Maltesern sowie THW. Kommunikationsstrategie, Öffentlichkeitsarbeit und Vernetzung auf überorganisatorischer Ebene – als Networker und Stratege.</p>
-          <p>Bei Großschadenslagen übernehme ich zusätzlich Führungsverantwortung im Einsatzstab – Schnittstelle zwischen operativer Lage und strategischer Kommunikation (u.a. Weihnachtsbombe mit internationaler Berichterstattung).</p>
-          <div class="vol-tags">
-            <span class="tag">Medienbeauftragter</span>
-            <span class="tag">Vorstand</span>
-            <span class="tag">Stabsdienst</span>
-            <span class="tag">Krisenkommunikation</span>
-            <span class="tag">Vernetzung</span>
-            <span class="tag">17 Jahre</span>
-          </div>
+      </div>
+      <div class="vol-card">
+        <div class="vol-card-label">Strategie &amp; Vernetzung</div>
+        <h3>Arbeitsgemeinschaft der Augsburger Hilfsorganisationen · Medienbeauftragter im Vorstand</h3>
+        <p>Ehrenamtlicher Medienbeauftragter im Vorstand des Bündnisses von ASB, BRK, DLRG, Johannitern und Maltesern sowie THW. Kommunikationsstrategie, Öffentlichkeitsarbeit und Vernetzung auf überorganisatorischer Ebene – als Networker und Stratege.</p>
+        <p>Bei Großschadenslagen übernehme ich zusätzlich Führungsverantwortung im Einsatzstab – Schnittstelle zwischen operativer Lage und strategischer Kommunikation (u.a. Weihnachtsbombe mit internationaler Berichterstattung).</p>
+        <div class="vol-tags">
+          <span class="tag">Medienbeauftragter</span>
+          <span class="tag">Vorstand</span>
+          <span class="tag">Stabsdienst</span>
+          <span class="tag">Krisenkommunikation</span>
+          <span class="tag">Vernetzung</span>
+          <span class="tag">17 Jahre</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ── KONTAKT ── -->
 <section class="contact" id="contact">
   <div class="section-inner">
     <div class="sec-head reveal">
@@ -465,7 +518,7 @@ footer .f-motto{color:rgba(240,224,64,0.3);font-size:.72rem;font-style:italic}
       <div class="c-items">
         <div class="c-item">
           <a class="c-icon-link" href="https://linkedin.com/in/raphael-doderer" target="_blank">
-            <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="44" height="44" rx="6" fill="#F0E040"/><path d="M13 18H17V31H13V18ZM15 16.5C13.9 16.5 13 15.6 13 14.5C13 13.4 13.9 12.5 15 12.5C16.1 12.5 17 13.4 17 14.5C17 15.6 16.1 16.5 15 16.5ZM32 31H28V24.5C28 22.8 27.3 22 25.9 22C24.4 22 23.5 23 23.5 24.5V31H19.5V18H23.5V19.8C24.2 18.7 25.5 18 27 18C29.8 18 32 20.2 32 23V31Z" fill="#111111"/></svg>
+            <svg viewBox="0 0 44 44" fill="none"><rect width="44" height="44" rx="6" fill="#F0E040"/><path d="M13 18H17V31H13V18ZM15 16.5C13.9 16.5 13 15.6 13 14.5C13 13.4 13.9 12.5 15 12.5C16.1 12.5 17 13.4 17 14.5C17 15.6 16.1 16.5 15 16.5ZM32 31H28V24.5C28 22.8 27.3 22 25.9 22C24.4 22 23.5 23 23.5 24.5V31H19.5V18H23.5V19.8C24.2 18.7 25.5 18 27 18C29.8 18 32 20.2 32 23V31Z" fill="#111111"/></svg>
           </a>
           <div>
             <div class="c-label">LinkedIn</div>
@@ -474,7 +527,7 @@ footer .f-motto{color:rgba(240,224,64,0.3);font-size:.72rem;font-style:italic}
         </div>
         <div class="c-item">
           <a class="c-icon-link" href="#" onclick="revealContact('email');return false;">
-            <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="44" height="44" rx="6" fill="#F0E040"/><path d="M9 13H35C35.6 13 36 13.4 36 14V30C36 30.6 35.6 31 35 31H9C8.4 31 8 30.6 8 30V14C8 13.4 8.4 13 9 13ZM22 24L10 16V28H34V16L22 24ZM10.5 14L22 21.8L33.5 14H10.5Z" fill="#111111"/></svg>
+            <svg viewBox="0 0 44 44" fill="none"><rect width="44" height="44" rx="6" fill="#F0E040"/><path d="M9 13H35C35.6 13 36 13.4 36 14V30C36 30.6 35.6 31 35 31H9C8.4 31 8 30.6 8 30V14C8 13.4 8.4 13 9 13ZM22 24L10 16V28H34V16L22 24ZM10.5 14L22 21.8L33.5 14H10.5Z" fill="#111111"/></svg>
           </a>
           <div>
             <div class="c-label">E-Mail</div>
@@ -483,7 +536,7 @@ footer .f-motto{color:rgba(240,224,64,0.3);font-size:.72rem;font-style:italic}
         </div>
         <div class="c-item">
           <a class="c-icon-link" href="#" onclick="revealContact('phone');return false;">
-            <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="44" height="44" rx="6" fill="#F0E040"/><path d="M12 10H18L20 16L17 18C18.4 21 23 25.6 26 27L28 24L34 26V32C34 33.1 33.1 34 32 34C18.7 34 10 25.3 10 12C10 10.9 10.9 10 12 10Z" fill="#111111"/></svg>
+            <svg viewBox="0 0 44 44" fill="none"><rect width="44" height="44" rx="6" fill="#F0E040"/><path d="M12 10H18L20 16L17 18C18.4 21 23 25.6 26 27L28 24L34 26V32C34 33.1 33.1 34 32 34C18.7 34 10 25.3 10 12C10 10.9 10.9 10 12 10Z" fill="#111111"/></svg>
           </a>
           <div>
             <div class="c-label">Telefon</div>
@@ -495,17 +548,42 @@ footer .f-motto{color:rgba(240,224,64,0.3);font-size:.72rem;font-style:italic}
   </div>
 </section>
 
+<!-- ── FOOTER ── -->
 <footer>
   <p>&copy; 2026 Raphael Doderer &nbsp;·&nbsp; Augsburg</p>
   <span class="f-motto">Miteinander füreinander da sein.</span>
-  <a href="#" onclick="document.getElementById('legal-modal').style.display='flex';return false;" 
-     style="color:rgba(240,224,64,0.3);font-size:.72rem;text-decoration:none;margin-left:2rem">
-     Impressum & Datenschutz
-  </a>
+  <a class="f-legal" href="#" onclick="document.getElementById('legal-modal').style.display='flex';return false;">Impressum &amp; Datenschutz</a>
 </footer>
 
-<script>
+<!-- ── IMPRESSUM & DATENSCHUTZ MODAL ── -->
+<div id="legal-modal" onclick="if(event.target===this)this.style.display='none'"
+     style="display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,0.75);align-items:center;justify-content:center;padding:2rem">
+  <div style="background:#fff;max-width:640px;width:100%;max-height:80vh;overflow-y:auto;padding:2.5rem;position:relative;border-radius:.25rem">
+    <button onclick="document.getElementById('legal-modal').style.display='none'"
+            style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.4rem;cursor:pointer;color:#444">&times;</button>
+    <h2 style="font-size:1.1rem;font-weight:900;margin-bottom:1.5rem;color:#111">Impressum</h2>
+    <p style="font-size:.85rem;color:#444;line-height:1.8;margin-bottom:.5rem"><strong>Angaben gemäß § 5 TMG</strong></p>
+    <p style="font-size:.85rem;color:#444;line-height:1.8;margin-bottom:1.5rem">
+      Raphael Doderer<br>Otto-Sauler-Straße 35<br>86157 Augsburg<br><br>E-Mail: impressum@bered.de
+    </p>
+    <h2 style="font-size:1.1rem;font-weight:900;margin-bottom:1rem;color:#111">Datenschutzerklärung</h2>
+    <p style="font-size:.85rem;color:#444;line-height:1.8;margin-bottom:1rem"><strong>Verantwortlicher:</strong> Raphael Doderer, Otto-Sauler-Straße 35, 86157 Augsburg</p>
+    <p style="font-size:.85rem;color:#444;line-height:1.8;margin-bottom:1rem"><strong>Keine Datenerhebung:</strong> Diese Website erhebt keine personenbezogenen Daten, setzt keine Cookies und verwendet kein Tracking oder Analyse-Tools. Es werden keinerlei Nutzerdaten gespeichert oder an Dritte weitergegeben.</p>
+    <p style="font-size:.85rem;color:#444;line-height:1.8;margin-bottom:1rem"><strong>Kontaktaufnahme:</strong> Wenn Sie per E-Mail oder Telefon Kontakt aufnehmen, werden Ihre Angaben zur Bearbeitung der Anfrage gespeichert. Diese Daten werden nicht ohne Ihre Einwilligung weitergegeben.</p>
+    <p style="font-size:.85rem;color:#444;line-height:1.8;margin-bottom:1rem"><strong>Hosting:</strong> Diese Website wird über GitHub Pages (GitHub Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA) gehostet. GitHub kann beim Abruf der Seite technische Verbindungsdaten (z.B. IP-Adresse) speichern. Weitere Informationen: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" style="color:#111">GitHub Privacy Statement</a>.</p>
+    <p style="font-size:.85rem;color:#444;line-height:1.8"><strong>Ihre Rechte:</strong> Sie haben das Recht auf Auskunft, Berichtigung und Löschung Ihrer gespeicherten Daten sowie das Recht auf Einschränkung der Verarbeitung. Kontakt: impressum@bered.de</p>
+  </div>
+</div>
 
+<script>
+// ── Hamburger Menü ──
+const hb=document.getElementById('hamburger');
+const mm=document.getElementById('mobile-menu');
+function closeMobileMenu(){mm.classList.remove('open');hb.classList.remove('open');}
+hb.addEventListener('click',()=>{mm.classList.toggle('open');hb.classList.toggle('open');});
+document.addEventListener('click',e=>{if(!hb.contains(e.target)&&!mm.contains(e.target))closeMobileMenu();});
+
+// ── Kontakt Reveal ──
 const contacts={
   email:{parts:['r.doderer','@','bered','.de']},
   phone:{parts:['0151',' ','15627102']}
@@ -514,66 +592,14 @@ function revealContact(t){
   const val=contacts[t].parts.join('');
   const el=document.getElementById(t+'-link');
   el.href=(t==='email'?'mailto:':'tel:')+val.replace(/\s/g,'');
-  el.textContent=val;
-  el.onclick=null;
+  el.textContent=val;el.onclick=null;
 }
+
+// ── Scroll Animationen ──
 const obs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
 },{threshold:.08});
 document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
 </script>
-
-
- <!-- IMPRESSUM & DATENSCHUTZ MODAL -->
-<div id="legal-modal" onclick="if(event.target===this)this.style.display='none'" 
-     style="display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,0.75);
-            align-items:center;justify-content:center;padding:2rem">
-  <div style="background:#fff;max-width:640px;width:100%;max-height:80vh;overflow-y:auto;
-              padding:2.5rem;position:relative;border-radius:.25rem">
-    <button onclick="document.getElementById('legal-modal').style.display='none'"
-            style="position:absolute;top:1rem;right:1rem;background:none;border:none;
-                   font-size:1.4rem;cursor:pointer;color:#444">&times;</button>
-
-    <h2 style="font-size:1.1rem;font-weight:900;margin-bottom:1.5rem;color:#111">Impressum</h2>
-    <p style="font-size:.85rem;color:#444;line-height:1.8;margin-bottom:.5rem">
-      <strong>Angaben gemäß § 5 TMG</strong>
-    </p>
-    <p style="font-size:.85rem;color:#444;line-height:1.8;margin-bottom:1.5rem">
-      Raphael Doderer<br>
-      Otto-Sauler-Straße 35<br>
-      86157 Augsburg<br><br>
-      E-Mail: impressum@bered.de<br>
-      
-    </p>
-
-    <h2 style="font-size:1.1rem;font-weight:900;margin-bottom:1rem;color:#111">Datenschutzerklärung</h2>
-    <p style="font-size:.85rem;color:#444;line-height:1.8;margin-bottom:1rem">
-      <strong>Verantwortlicher:</strong> Raphael Doderer, Otto-Sauler-Straße 35, 86157 Augsburg
-    </p>
-    <p style="font-size:.85rem;color:#444;line-height:1.8;margin-bottom:1rem">
-      <strong>Keine Datenerhebung:</strong> Diese Website erhebt keine personenbezogenen Daten, 
-      setzt keine Cookies und verwendet kein Tracking oder Analyse-Tools. Es werden keinerlei 
-      Nutzerdaten gespeichert oder an Dritte weitergegeben.
-    </p>
-    <p style="font-size:.85rem;color:#444;line-height:1.8;margin-bottom:1rem">
-      <strong>Kontaktaufnahme:</strong> Wenn Sie per E-Mail oder Telefon Kontakt aufnehmen, 
-      werden Ihre Angaben zur Bearbeitung der Anfrage gespeichert. Diese Daten werden nicht 
-      ohne Ihre Einwilligung weitergegeben.
-    </p>
-    <p style="font-size:.85rem;color:#444;line-height:1.8;margin-bottom:1rem">
-      <strong>Hosting:</strong> Diese Website wird über GitHub Pages (GitHub Inc., 
-      88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA) gehostet. 
-      GitHub kann beim Abruf der Seite technische Verbindungsdaten (z.B. IP-Adresse) 
-      speichern. Weitere Informationen: 
-      <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" 
-         target="_blank" style="color:#111">GitHub Privacy Statement</a>.
-    </p>
-    <p style="font-size:.85rem;color:#444;line-height:1.8">
-      <strong>Ihre Rechte:</strong> Sie haben das Recht auf Auskunft, Berichtigung und Löschung 
-      Ihrer gespeicherten Daten sowie das Recht auf Einschränkung der Verarbeitung. 
-      Kontakt: impressum@bered.de
-    </p>
-  </div>
-</div> 
 </body>
 </html>
