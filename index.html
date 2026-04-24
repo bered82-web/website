@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -6,180 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Raphael Doderer</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --gold:#F0E040;--gold2:#F5E96A;--gold-dark:#C8BC00;
-  --black:#111111;--dark:#1a1a1a;--muted:#444;--light:#fafaf5;
-  --white:#fff;--border:#111;
-}
-html{scroll-behavior:smooth}
-body{font-family:'Segoe UI',system-ui,sans-serif;color:var(--black);background:var(--light);overflow-x:hidden}
-
-/* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--gold);border-bottom:2px solid var(--border);padding:.7rem 2.5rem;display:flex;justify-content:space-between;align-items:center}
-.nav-logo{font-size:.85rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--black)}
-.nav-links{display:flex;gap:1.8rem;list-style:none}
-.nav-links a{color:var(--black);text-decoration:none;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;transition:opacity .15s}
-.nav-links a:hover{opacity:.55}
-.nav-right{display:flex;align-items:center;gap:.8rem}
-.nav-contact-icon{display:none;align-items:center;justify-content:center;width:36px;height:36px}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:.3rem}
-.hamburger span{display:block;width:22px;height:2px;background:var(--black);transition:all .3s;border-radius:2px}
-.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.hamburger.open span:nth-child(2){opacity:0}
-.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.mobile-menu{display:none;position:fixed;top:49px;left:0;right:0;background:var(--gold);border-bottom:2px solid var(--border);padding:1rem 2.5rem;z-index:99}
-.mobile-menu.open{display:block}
-.mobile-menu a{display:block;color:var(--black);text-decoration:none;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:.65rem 0;border-bottom:1px solid rgba(0,0,0,0.08)}
-.mobile-menu a:last-child{border-bottom:none}
-
-/* ── HERO ── */
-.hero{background:var(--gold);padding:6.5rem 2.5rem 4rem;border-bottom:2px solid var(--border)}
-.hero-inner{max-width:1060px;margin:0 auto}
-.hero-top{border-bottom:2px solid var(--border);padding-bottom:1.5rem;margin-bottom:2.5rem;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem}
-.hero-role{font-size:.72rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--black);margin-bottom:.5rem}
-.hero-name{font-size:clamp(3rem,6vw,5rem);font-weight:900;line-height:.95;letter-spacing:-.03em;color:var(--black)}
-.hero-badge{background:var(--black);color:var(--gold);font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.35rem .9rem;border-radius:2rem;white-space:nowrap;align-self:flex-end}
-.hero-grid{display:grid;grid-template-columns:220px 1fr;gap:3rem;align-items:start}
-.hero-img-wrap img{width:100%;display:block;border:2px solid var(--border);object-fit:cover;object-position:top;aspect-ratio:3/4}
-.hero-main-text{padding-top:.3rem}
-.hero-lead{font-size:1.05rem;font-weight:700;color:var(--black);line-height:1.55;margin-bottom:1rem}
-.hero-sub{font-size:.88rem;color:var(--dark);line-height:1.8;margin-bottom:1.5rem}
-.hero-ctas{display:flex;gap:.8rem;flex-wrap:wrap}
-.btn-black{background:var(--black);color:var(--gold);padding:.65rem 1.6rem;border-radius:.25rem;text-decoration:none;font-weight:700;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;transition:opacity .2s}
-.btn-black:hover{opacity:.8}
-.btn-outline{background:transparent;color:var(--black);padding:.65rem 1.6rem;border-radius:.25rem;text-decoration:none;font-weight:700;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;border:2px solid var(--black);transition:all .2s}
-.btn-outline:hover{background:var(--black);color:var(--gold)}
-
-/* ── SECTIONS ── */
-section{padding:4.5rem 2.5rem}
-.section-inner{max-width:1060px;margin:0 auto}
-.sec-head{border-bottom:2px solid var(--border);padding-bottom:.8rem;margin-bottom:2.5rem;display:flex;align-items:baseline;gap:1.5rem}
-.sec-label{font-size:.65rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
-.sec-title{font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:900;color:var(--black);letter-spacing:-.02em}
-
-/* ── ÜBER MICH ── */
-.about{background:var(--white);border-bottom:2px solid var(--border)}
-.about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:4rem;align-items:start}
-.about-grid p{color:var(--muted);line-height:1.85;margin-bottom:1rem;font-size:.9rem}
-.motto-box{background:var(--gold);border:2px solid var(--border);padding:1.5rem 1.8rem;margin-top:1.5rem}
-.motto-box blockquote{font-size:1.1rem;font-weight:700;color:var(--black);line-height:1.6;font-style:italic}
-.motto-box cite{display:block;margin-top:.5rem;font-size:.73rem;color:var(--muted);font-style:normal}
-.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;border:2px solid var(--border);background:var(--border)}
-.stat-card{background:var(--white);padding:1.5rem;text-align:center}
-.stat-card .n{font-size:2rem;font-weight:900;color:var(--black);display:block;letter-spacing:-.03em}
-.stat-card .l{font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-top:.3rem;font-weight:600}
-
-/* ── MOTTO SECTION ── */
-.motto-section{position:relative;min-height:520px;display:flex;align-items:center;justify-content:center;overflow:hidden;border-top:2px solid #111;border-bottom:2px solid #111}
-.motto-bg{position:absolute;inset:0;background-image:url('raphael-doderer-einsatz.jpeg');background-size:cover;background-position:center 30%;filter:grayscale(40%) brightness(0.35);transform:scale(1.03);transition:transform 8s ease}
-.motto-section:hover .motto-bg{transform:scale(1.06)}
-.motto-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(17,17,17,0.6) 0%,rgba(240,224,64,0.08) 50%,rgba(17,17,17,0.7) 100%)}
-.motto-accent{position:absolute;left:2.5rem;top:50%;transform:translateY(-50%);width:3px;height:120px;background:linear-gradient(to bottom,transparent,#F0E040,transparent)}
-.motto-content{position:relative;z-index:2;text-align:center;padding:4rem 2.5rem;max-width:800px}
-.motto-eyebrow{font-size:.68rem;font-weight:800;letter-spacing:.25em;text-transform:uppercase;color:rgba(240,224,64,0.6);margin-bottom:1.5rem}
-.motto-quote{font-size:clamp(2rem,5vw,3.8rem);font-weight:900;color:#fff;line-height:1.05;letter-spacing:-.03em;margin-bottom:1.2rem}
-.motto-quote em{color:#F0E040;font-style:normal}
-.motto-sub{font-size:.92rem;color:rgba(255,255,255,0.55);line-height:1.75;max-width:520px;margin:0 auto 2rem}
-.motto-divider{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1.5rem}
-.motto-divider-line{width:60px;height:1px;background:rgba(240,224,64,0.3)}
-.motto-divider-dot{width:6px;height:6px;border-radius:50%;background:#F0E040}
-.motto-badge{position:absolute;bottom:1.5rem;right:2rem;font-size:.65rem;color:rgba(255,255,255,0.25);letter-spacing:.1em;text-transform:uppercase}
-
-/* ── KOMPETENZEN ── */
-.competencies{background:var(--gold);border-bottom:2px solid var(--border)}
-.comp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0;border:2px solid var(--border);background:var(--border);margin-top:2rem}
-.comp-card{background:var(--gold);padding:1.6rem;transition:background .2s}
-.comp-card:hover{background:var(--black)}
-.comp-card:hover h3,.comp-card:hover p{color:var(--gold)}
-.comp-icon{font-size:1.2rem;margin-bottom:.8rem;display:block}
-.comp-card h3{font-size:.85rem;font-weight:800;color:var(--black);margin-bottom:.5rem;letter-spacing:.02em;text-transform:uppercase;transition:color .2s}
-.comp-card p{font-size:.78rem;color:var(--dark);line-height:1.65;transition:color .2s}
-
-/* ── TIMELINE ── */
-.tl-section{background:#1c1c1c;border-bottom:2px solid var(--gold)}
-.tl-section .sec-title{color:#fff}
-.tl-section .sec-label{color:var(--gold)}
-.tl-section .sec-head{border-bottom-color:rgba(240,224,64,0.3)}
-.tl{display:grid;grid-template-columns:1fr;gap:0;border:1px solid rgba(255,255,255,0.12);margin-top:1rem}
-.tl-item{display:grid;grid-template-columns:160px 1fr;gap:0;border-bottom:1px solid rgba(255,255,255,0.08)}
-.tl-item:last-child{border-bottom:none}
-.tl-left{background:rgba(240,224,64,0.08);padding:1.5rem 1.2rem;border-right:1px solid rgba(255,255,255,0.08)}
-.tl-year{font-size:.68rem;color:var(--gold);letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin-bottom:.4rem}
-.tl-org{font-size:.9rem;font-weight:800;color:#fff}
-.tl-right{padding:1.5rem}
-.tl-role{font-size:.82rem;color:rgba(255,255,255,0.75);margin-bottom:.6rem;line-height:1.5}
-.tl-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin:.5rem 0}
-.tl-tag{background:rgba(240,224,64,0.15);border:1px solid rgba(240,224,64,0.35);border-radius:2rem;padding:.15rem .65rem;font-size:.65rem;color:var(--gold);letter-spacing:.06em}
-.tl-desc{font-size:.8rem;color:rgba(255,255,255,0.6);line-height:1.7}
-.tl-ehrenamt{margin-top:2rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.tl-ea{background:rgba(240,224,64,0.08);border:1px solid rgba(240,224,64,0.25);padding:1.3rem}
-.tl-ea h4{color:var(--gold);font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;margin-bottom:.5rem;font-weight:800}
-.tl-ea p{color:rgba(255,255,255,0.7);font-size:.8rem;line-height:1.7}
-
-/* ── IMPACT ── */
-.impact{background:var(--white);border-bottom:2px solid var(--border)}
-.impact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0;border:2px solid var(--border);background:var(--border);margin-top:2rem}
-.impact-card{background:var(--white);padding:1.8rem;transition:background .2s}
-.impact-card:hover{background:var(--gold)}
-.impact-icon{font-size:1.4rem;margin-bottom:.7rem;display:block}
-.impact-num{font-size:1.6rem;font-weight:900;color:var(--black);margin-bottom:.3rem;letter-spacing:-.03em}
-.impact-card h3{font-size:.82rem;font-weight:800;color:var(--black);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.03em}
-.impact-card p{font-size:.76rem;color:var(--muted);line-height:1.6}
-
-/* ── EHRENAMT ── */
-.volunteer{background:var(--gold);border-bottom:2px solid var(--border)}
-.vol-grid{display:grid;grid-template-columns:280px 1fr;gap:2rem;align-items:start;margin-top:2rem}
-.vol-img img{width:100%;display:block;border:2px solid var(--border);object-fit:cover;object-position:top}
-.vol-cards{display:flex;flex-direction:column;gap:1.2rem}
-.vol-card{background:var(--white);border:2px solid var(--border);padding:1.5rem 1.8rem}
-.vol-card-label{font-size:.65rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
-.vol-card h3{font-size:.95rem;font-weight:800;color:var(--black);margin-bottom:.8rem}
-.vol-card p{color:var(--dark);line-height:1.75;font-size:.83rem;margin-bottom:.6rem}
-.vol-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.6rem}
-.tag{background:var(--black);color:var(--gold);border-radius:2rem;padding:.25rem .8rem;font-size:.7rem;font-weight:600;letter-spacing:.06em}
-
-/* ── KONTAKT ── */
-.contact{background:#1c1c1c}
-.contact .sec-title{color:#fff}
-.contact .sec-label{color:var(--gold)}
-.contact .sec-head{border-bottom-color:rgba(255,255,255,0.15)}
-.contact-solo{max-width:520px;margin-top:1.5rem}
-.contact-lead{color:rgba(255,255,255,0.8);line-height:1.85;margin-bottom:2rem;font-size:.9rem}
-.c-items{display:flex;flex-direction:column;gap:1rem}
-.c-item{display:grid;grid-template-columns:44px 1fr;gap:1rem;align-items:center}
-.c-icon-link{width:44px;height:44px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:opacity .2s}
-.c-icon-link:hover{opacity:.75}
-.c-icon-link svg{width:44px;height:44px;display:block}
-.c-label{font-size:.62rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:.14em;margin-bottom:.15rem;font-weight:700}
-.c-val{color:rgba(255,255,255,0.9);font-size:.9rem;cursor:pointer;transition:color .2s;text-decoration:none;display:block}
-.c-val:hover{color:var(--gold)}
-
-/* ── FOOTER ── */
-footer{background:#000;padding:1.5rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;border-top:1px solid rgba(240,224,64,0.15)}
-footer p{color:rgba(255,255,255,0.18);font-size:.72rem;letter-spacing:.08em}
-footer .f-motto{color:rgba(240,224,64,0.3);font-size:.72rem;font-style:italic}
-footer .f-legal{color:rgba(240,224,64,0.3);font-size:.72rem;text-decoration:none;cursor:pointer}
-footer .f-legal:hover{color:var(--gold)}
-
-/* ── ANIMATIONEN ── */
-.reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
-.reveal.visible{opacity:1;transform:none}
-
-/* ── RESPONSIVE ── */
-@media(max-width:768px){
-  .hero-grid,.about-grid,.vol-grid,.tl-ehrenamt{grid-template-columns:1fr}
-  .tl-item{grid-template-columns:1fr}
-  .tl-left{border-right:none;border-bottom:1px solid rgba(240,224,64,0.1)}
-  .nav-links{display:none}
-  .nav-right{display:flex}
-  .hamburger{display:flex}
-  .nav-contact-icon{display:flex}
-  .hero-top{flex-direction:column;align-items:flex-start}
-  .vol-grid{grid-template-columns:1fr}
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -188,9 +14,9 @@ footer .f-legal:hover{color:var(--gold)}
   <div class="nav-logo">Raphael Doderer</div>
   <ul class="nav-links">
     <li><a href="#about">Über mich</a></li>
+    <li><a href="#impact-preview">Impact</a></li>
     <li><a href="#competencies">Kompetenzen</a></li>
     <li><a href="#timeline">Stationen</a></li>
-    <li><a href="#impact">Impact</a></li>
     <li><a href="#volunteer">Ehrenamt</a></li>
     <li><a href="#contact">Kontakt</a></li>
   </ul>
@@ -203,13 +29,11 @@ footer .f-legal:hover{color:var(--gold)}
     </button>
   </div>
 </nav>
-
-<!-- Mobile Menü -->
 <div class="mobile-menu" id="mobile-menu">
   <a href="#about" onclick="closeMobileMenu()">Über mich</a>
+  <a href="#impact-preview" onclick="closeMobileMenu()">Impact</a>
   <a href="#competencies" onclick="closeMobileMenu()">Kompetenzen</a>
   <a href="#timeline" onclick="closeMobileMenu()">Stationen</a>
-  <a href="#impact" onclick="closeMobileMenu()">Impact</a>
   <a href="#volunteer" onclick="closeMobileMenu()">Ehrenamt</a>
   <a href="#contact" onclick="closeMobileMenu()">Kontakt</a>
 </div>
@@ -228,17 +52,17 @@ footer .f-legal:hover{color:var(--gold)}
       <div class="hero-img-wrap">
         <img src="raphael-doderer.jpeg" alt="Raphael Doderer">
       </div>
-      <div class="hero-main-text">
+      <div>
         <p class="hero-lead">Strukturgeber &amp; Transformationsarchitekt<br>
-          <span style="font-weight:500;opacity:.55">für Marketing · Kommunikation · Digitale Markenentwicklung</span>
+          <span>für Marketing · Kommunikation · Digitale Markenentwicklung</span>
         </p>
-        <div style="display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.2rem">
-          <span style="background:var(--black);color:var(--gold);font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .85rem;border-radius:2rem">CMO</span>
-          <span style="background:var(--black);color:var(--gold);font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .85rem;border-radius:2rem">CCO</span>
-          <span style="background:var(--black);color:var(--gold);font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .85rem;border-radius:2rem">CDO</span>
-          <span style="background:transparent;color:var(--black);border:2px solid var(--black);font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .85rem;border-radius:2rem">Marketing</span>
-          <span style="background:transparent;color:var(--black);border:2px solid var(--black);font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .85rem;border-radius:2rem">Digitale Transformation</span>
-          <span style="background:transparent;color:var(--black);border:2px solid var(--black);font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .85rem;border-radius:2rem">Kommunikation</span>
+        <div class="hero-chips">
+          <span class="chip chip-solid">CMO</span>
+          <span class="chip chip-solid">CCO</span>
+          <span class="chip chip-solid">CDO</span>
+          <span class="chip chip-outline">Marketing</span>
+          <span class="chip chip-outline">Digitale Transformation</span>
+          <span class="chip chip-outline">Kommunikation</span>
         </div>
         <p class="hero-sub">20+ Jahre Erfahrung an der Schnittstelle von Marke, Digitalisierung und Unternehmenskommunikation. Ich kombiniere die Entscheidungsstärke aus 25 Jahren Krisenmanagement im Bevölkerungsschutz mit transformativer Business-Führung – und bringe Struktur dorthin, wo Wandel gelingt.</p>
         <div class="hero-ctas">
@@ -275,22 +99,78 @@ footer .f-legal:hover{color:var(--gold)}
   </div>
 </section>
 
-<!-- ── MOTTO & EINSATZFOTO ── -->
-<section class="motto-section">
-  <div class="motto-bg"></div>
-  <div class="motto-overlay"></div>
-  <div class="motto-accent"></div>
-  <div class="motto-content">
-    <div class="motto-eyebrow">Haltung &amp; Antrieb</div>
-    <div class="motto-quote">Miteinander<br><em>füreinander</em><br>da sein.</div>
-    <p class="motto-sub">Ob im Führungsstab eines Großeinsatzes oder als Leiter eines Transformationsprojekts – mein Verständnis von Führung ist dasselbe: Menschen befähigen, Strukturen schaffen, Verantwortung übernehmen.</p>
-    <div class="motto-divider">
-      <div class="motto-divider-line"></div>
-      <div class="motto-divider-dot"></div>
-      <div class="motto-divider-line"></div>
+<!-- ── HALTUNG & ANTRIEB (Einsatzfoto) ── -->
+<section class="photo-section">
+  <div class="photo-bg" style="background-image:url('raphael-doderer-einsatz.jpeg')"></div>
+  <div class="photo-overlay"></div>
+  <div class="photo-accent"></div>
+  <div class="photo-content">
+    <div class="photo-eyebrow">Haltung &amp; Antrieb</div>
+    <div class="photo-quote">Miteinander<br><em>füreinander</em><br>da sein.</div>
+    <p class="photo-sub">Ob im Führungsstab eines Großeinsatzes oder als Leiter eines Transformationsprojekts – mein Verständnis von Führung ist dasselbe: Menschen befähigen, Strukturen schaffen, Verantwortung übernehmen.</p>
+    <div class="photo-divider">
+      <div class="photo-divider-line"></div>
+      <div class="photo-divider-dot"></div>
+      <div class="photo-divider-line"></div>
     </div>
   </div>
-  <div class="motto-badge">Hochwasser-Einsatz Augsburg 2024</div>
+  <div class="photo-badge">Hochwasser-Einsatz Augsburg 2024</div>
+</section>
+
+<!-- ── IMPACT-VORSCHAU ── -->
+<section class="impact-preview" id="impact-preview">
+  <div class="section-inner">
+    <div class="sec-head reveal">
+      <div class="sec-label">Messbare Wirkung</div>
+      <h2 class="sec-title">Zahlen, die für sich sprechen</h2>
+    </div>
+    <div class="kpi-grid reveal">
+      <div class="kpi-card">
+        <span class="kpi-num">+70 %</span>
+        <div class="kpi-label">Ticket-Sales</div>
+        <div class="kpi-sub">Klassik Radio Live in Concert</div>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-num">+51 %</span>
+        <div class="kpi-label">Reichweite</div>
+        <div class="kpi-sub">Beats Radio Aufbau &amp; Skalierung</div>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-num">+100 %</span>
+        <div class="kpi-label">Streaming-Sessions</div>
+        <div class="kpi-sub">Klassik Radio Plus</div>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-num">150+</span>
+        <div class="kpi-label">Website-Relaunches</div>
+        <div class="kpi-sub">KJF &amp; ANTENNE BAYERN GROUP</div>
+      </div>
+      <div class="kpi-card gold">
+        <span class="kpi-num">25 Mio. €</span>
+        <div class="kpi-label">Budgetverantwortung</div>
+        <div class="kpi-sub">Media p.a. – ANTENNE BAYERN</div>
+      </div>
+    </div>
+    <p class="kpi-more reveal"><a href="#impact">Alle Ergebnisse im Detail ↓</a></p>
+  </div>
+</section>
+
+<!-- ── LIVE & DIGITAL (ANTENNE BAYERN Fan Zone) ── -->
+<section class="photo-section">
+  <div class="photo-bg" style="background-image:url('raphael-doderer-antenne.jpeg');background-position:center 40%"></div>
+  <div class="photo-overlay"></div>
+  <div class="photo-accent"></div>
+  <div class="photo-content">
+    <div class="photo-eyebrow">Live &amp; Digital</div>
+    <div class="photo-quote">Millionen Menschen<br><em>bewegen</em> –<br>digital &amp; live.</div>
+    <p class="photo-sub">Als Leiter Marketing der ANTENNE BAYERN GROUP verantwortete ich Kampagnen, Plattformen und Live-Erlebnisse für Millionen Menschen im DACH-Raum – darunter offizielle Partnerschaften bei der UEFA EURO 2024 als Host-City-Partner in München.</p>
+    <div class="photo-divider">
+      <div class="photo-divider-line"></div>
+      <div class="photo-divider-dot"></div>
+      <div class="photo-divider-line"></div>
+    </div>
+  </div>
+  <div class="photo-badge">UEFA EURO 2024 · Fan Zone Olympiapark München</div>
 </section>
 
 <!-- ── KERNKOMPETENZEN ── -->
@@ -302,43 +182,43 @@ footer .f-legal:hover{color:var(--gold)}
     </div>
     <div class="comp-grid">
       <div class="comp-card reveal">
-        <span class="comp-icon">🎯</span>
-        <h3>Marketing & Brand Leadership</h3>
+        <svg class="comp-icon" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="16" stroke="currentColor" stroke-width="2"/><circle cx="18" cy="18" r="5" fill="currentColor"/><line x1="18" y1="2" x2="18" y2="10" stroke="currentColor" stroke-width="2"/><line x1="18" y1="26" x2="18" y2="34" stroke="currentColor" stroke-width="2"/><line x1="2" y1="18" x2="10" y2="18" stroke="currentColor" stroke-width="2"/><line x1="26" y1="18" x2="34" y2="18" stroke="currentColor" stroke-width="2"/></svg>
+        <h3>Marketing &amp; Brand Leadership</h3>
         <p>Strategische Markenführung, Positionierung und Kampagnensteuerung in Medien, Gesundheits- und Sozialwirtschaft. Vom Konzept über Controlling bis zur kontinuierlichen Optimierung.</p>
       </div>
       <div class="comp-card reveal">
-        <span class="comp-icon">⚡</span>
+        <svg class="comp-icon" viewBox="0 0 36 36" fill="none"><path d="M4 18 L12 10 L20 16 L28 6 L34 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 30 L34 30" stroke="currentColor" stroke-width="2"/><path d="M28 6 L34 6 L34 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <h3>Digitale Transformation</h3>
         <p>Konzeption und Umsetzung digitaler Changeprozesse: E-Commerce, Social Intranet, internationale Rollouts von Web, App und Social Media sowie datenbasierte Entscheidungsprozesse.</p>
       </div>
       <div class="comp-card reveal">
-        <span class="comp-icon">👥</span>
-        <h3>Teamführung & Entwicklung</h3>
+        <svg class="comp-icon" viewBox="0 0 36 36" fill="none"><circle cx="12" cy="10" r="5" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="10" r="5" stroke="currentColor" stroke-width="2"/><path d="M2 30 C2 22 22 22 22 30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M22 26 C22 20 34 20 34 26" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <h3>Teamführung &amp; Entwicklung</h3>
         <p>Aufbau und Führung interdisziplinärer Teams bis zu 11 Direct Reports. Förderung von Eigenverantwortung, Resilienz und einer Kultur des Miteinanders – aus Überzeugung.</p>
       </div>
       <div class="comp-card reveal">
-        <span class="comp-icon">🤖</span>
+        <svg class="comp-icon" viewBox="0 0 36 36" fill="none"><rect x="4" y="4" width="28" height="20" rx="3" stroke="currentColor" stroke-width="2"/><path d="M10 32 L26 32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M18 24 L18 32" stroke="currentColor" stroke-width="2"/><path d="M12 14 L16 10 L20 14 L24 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <h3>KI-gestützte Workflows</h3>
         <p>Integration von KI-Tools in Kommunikations- und Marketingprozesse. Effizienzsteigerung durch intelligente Automatisierung von Content-Hubs – mit Augenmaß und Markenstimme.</p>
       </div>
       <div class="comp-card reveal">
-        <span class="comp-icon">📡</span>
+        <svg class="comp-icon" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="14" stroke="currentColor" stroke-width="2"/><path d="M18 4 Q26 18 18 32" stroke="currentColor" stroke-width="2"/><path d="M18 4 Q10 18 18 32" stroke="currentColor" stroke-width="2"/><path d="M4 18 L32 18" stroke="currentColor" stroke-width="2"/></svg>
         <h3>Ganzheitliche Kommunikation</h3>
         <p>Interne wie externe Kommunikationsstrategien: Krisenkommunikation, Change Communication, PR und Stakeholder-Management auf Vorstands- und Aufsichtsratsebene.</p>
       </div>
       <div class="comp-card reveal">
-        <span class="comp-icon">🏗️</span>
-        <h3>Struktur & Governance</h3>
+        <svg class="comp-icon" viewBox="0 0 36 36" fill="none"><rect x="4" y="14" width="10" height="18" stroke="currentColor" stroke-width="2"/><rect x="13" y="8" width="10" height="24" stroke="currentColor" stroke-width="2"/><rect x="22" y="4" width="10" height="28" stroke="currentColor" stroke-width="2"/></svg>
+        <h3>Struktur &amp; Governance</h3>
         <p>Analyse und Neuaufbau von Abteilungsstrukturen, Prozessen und Governance-Modellen für Multi-Brand-Portfolios – mit dem Blick für das Machbare.</p>
       </div>
       <div class="comp-card reveal">
-        <span class="comp-icon">📊</span>
-        <h3>Budget- & Ressourcenverantwortung</h3>
+        <svg class="comp-icon" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="14" stroke="currentColor" stroke-width="2"/><path d="M18 10 L20 16 L26 16 L21 20 L23 26 L18 22 L13 26 L15 20 L10 16 L16 16 Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        <h3>Budget- &amp; Ressourcenverantwortung</h3>
         <p>Steuerung von Media-Budgets bis 25 Mio. € p.a. sowie Relaunch-Budgets im mehrstelligen Millionenbereich – mit klarem Fokus auf ROI und messbaren Ergebnissen.</p>
       </div>
       <div class="comp-card reveal">
-        <span class="comp-icon">🔗</span>
-        <h3>Krisen- & Reputationsmanagement</h3>
+        <svg class="comp-icon" viewBox="0 0 36 36" fill="none"><path d="M18 4 L18 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M6 10 L12 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M4 22 L12 22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="18" cy="22" r="8" stroke="currentColor" stroke-width="2"/><path d="M18 18 L18 22 L22 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>Krisen- &amp; Reputationsmanagement</h3>
         <p>Aufbau und Leitung von Krisenstabs-Strukturen (u.a. Corona-Stab) sowie Etablierung von Reputationsmanagement-Systemen – beruflich wie ehrenamtlich bewährt.</p>
       </div>
     </div>
@@ -350,7 +230,7 @@ footer .f-legal:hover{color:var(--gold)}
   <div class="section-inner">
     <div class="sec-head reveal">
       <div class="sec-label">Mein Weg</div>
-      <h2 class="sec-title">Berufliche Stationen</h2>
+      <h2 class="sec-title sec-title-light">Berufliche Stationen</h2>
     </div>
     <div class="tl reveal">
       <div class="tl-item">
@@ -376,7 +256,7 @@ footer .f-legal:hover{color:var(--gold)}
           <div class="tl-tags">
             <span class="tl-tag">Multi-Brand DACH</span><span class="tl-tag">ANTENNE BAYERN</span><span class="tl-tag">ROCK ANTENNE</span><span class="tl-tag">OLDIE ANTENNE</span><span class="tl-tag">ANTENNE NRW</span><span class="tl-tag">NRW1</span>
           </div>
-          <div class="tl-desc">Aufbau der DACH-Multi-Brand-Strategie für bestehende und neue Audio-Marken. Führung der zentralen Marketing-, Kommunikations- und Digitalbereiche. Transformation der Online- &amp; Data-Unit in eine zentrale Holding-Dienstleistungsstruktur.</div>
+          <div class="tl-desc">Aufbau der DACH-Multi-Brand-Strategie für bestehende und neue Audio-Marken. Führung der zentralen Marketing-, Kommunikations- und Digitalbereiche. Transformation der Online- &amp; Data-Unit in eine zentrale Holding-Dienstleistungsstruktur. Offizieller Host-City-Partner UEFA EURO 2024 München.</div>
         </div>
       </div>
       <div class="tl-item">
@@ -385,9 +265,9 @@ footer .f-legal:hover{color:var(--gold)}
           <div class="tl-org">KJF Augsburg</div>
         </div>
         <div class="tl-right">
-          <div class="tl-role">Leiter Marketing und Kommunikation (Medizin, Soziales, Bildung) · 5 Direct Reports / bis 12 Personen in fachlicher Anleitung · Relaunch-Budget 5 Mio. €</div>
+          <div class="tl-role">Leiter Marketing und Kommunikation · 5 Direct Reports / bis 12 Personen fachlich · Relaunch-Budget 5 Mio. €</div>
           <div class="tl-tags">
-            <span class="tl-tag">150 Website-Relaunches</span><span class="tl-tag">Social Intranet 6.000 Mitarbeitende</span><span class="tl-tag">360°-Brandstrategie</span><span class="tl-tag">Employer Branding</span>
+            <span class="tl-tag">150 Website-Relaunches</span><span class="tl-tag">Social Intranet 6.000 MA</span><span class="tl-tag">360°-Brandstrategie</span><span class="tl-tag">Employer Branding</span>
           </div>
           <div class="tl-desc">Aufbau eines zentralen Marketing- und Kommunikationsteams für über 150 Standorte. Identitätsbasierte, digitale 360°-Brandstrategie. Einführung eines mandantenfähigen Social Intranets inkl. DMS.</div>
         </div>
@@ -408,32 +288,28 @@ footer .f-legal:hover{color:var(--gold)}
       <div class="tl-item">
         <div class="tl-left">
           <div class="tl-year">2007 – 2010</div>
-          <div class="tl-org">Johanniter-Unfall-Hilfe e.V.</div>
+          <div class="tl-org">Johanniter e.V.</div>
         </div>
         <div class="tl-right">
           <div class="tl-role">Sachgebietsleitung Kommunikation, Vertrieb &amp; Marketing | Allgäu &amp; Schwaben</div>
           <div class="tl-tags">
             <span class="tl-tag">Unternehmenskommunikation</span><span class="tl-tag">Online-Vertrieb</span><span class="tl-tag">CRM-Einführung</span><span class="tl-tag">Service-PR</span>
           </div>
-          <div class="tl-desc">Aufbau regionaler Kommunikations- und Marketingstrategie in einer bundesweiten Matrixstruktur. Entwicklung von Vertriebs- und Marketingmaßnahmen zur Stärkung von Umsatz und regionaler Markenpräsenz.</div>
+          <div class="tl-desc">Aufbau regionaler Kommunikations- und Marketingstrategie in einer bundesweiten Matrixstruktur.</div>
         </div>
       </div>
     </div>
-
-    <!-- Ehrenamt in der Timeline -->
-    <div class="tl-ehrenamt reveal">
+    <div class="tl-extra reveal">
       <div class="tl-ea">
-        <h4>Arbeitsgemeinschaft der Augsburger Hilfsorganisationen · Medienbeauftragter im Vorstand</h4>
-        <p>Langjähriges Vorstandsengagement für ASB, BRK, DLRG, Johanniter und Malteser sowie THW. Koordination, Strategie und Öffentlichkeitsarbeit auf überorganisatorischer Ebene in Stadt und Landkreis Augsburg.</p>
+        <h4>Arbeitsgemeinschaft Augsburger Hilfsorganisationen · Medienbeauftragter im Vorstand</h4>
+        <p>Vorstandsengagement für ASB, BRK, DLRG, Johanniter, Malteser und THW. Koordination, Strategie und Öffentlichkeitsarbeit auf überorganisatorischer Ebene.</p>
       </div>
       <div class="tl-ea">
-        <h4>Johanniter-Unfall-Hilfe in Augsburg · Rettungsdienst &amp; Bevölkerungsschutz</h4>
-        <p>Rettungssanitäter, Zugführer mit Weiterbildungsmodul in Grundlagen der Stabsarbeit – regelmäßig im Einsatz in Rettungsdienst, Sanitätswachdiensten und SEG-Einsätzen, unter anderem im Führungsstab.</p>
+        <h4>Johanniter-Unfall-Hilfe Augsburg · Rettungsdienst &amp; Bevölkerungsschutz</h4>
+        <p>Rettungssanitäter, Zugführer (BayZBE Führungsstufe B) – regelmäßig im Einsatz in Rettungsdienst, Sanitätswachdiensten und SEG-Einsätzen.</p>
       </div>
     </div>
-
-    <!-- Ausbildung -->
-    <div class="tl-ehrenamt reveal" style="margin-top:1rem">
+    <div class="tl-extra reveal" style="margin-top:1rem">
       <div class="tl-ea">
         <h4>Akademische Ausbildung · Universität Augsburg</h4>
         <p>Sprach- und Politikwissenschaft, Staats- und Völkerrecht (M.A.) · 2002 – 2008</p>
@@ -455,52 +331,52 @@ footer .f-legal:hover{color:var(--gold)}
     </div>
     <div class="impact-grid">
       <div class="impact-card reveal">
-        <span class="impact-icon">🎵</span>
+        <svg class="impact-icon" viewBox="0 0 32 32" fill="none"><path d="M16 4 C10 4 5 9 5 16 C5 23 10 28 16 28 C22 28 27 23 27 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M20 4 L27 4 L27 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 16 L27 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         <div class="impact-num">+70 %</div>
         <h3>Ticket-Sales skaliert</h3>
-        <p>Skalierung von „Klassik Radio Live in Concert" über 20.000 Besucher:innen und +25 % mehr Spielorte durch datengetriebene Vermarktung und digitale Vertriebskanäle.</p>
+        <p>Skalierung von „Klassik Radio Live in Concert" über 20.000 Besucher:innen und +25 % mehr Spielorte durch datengetriebene Vermarktung.</p>
       </div>
       <div class="impact-card reveal">
-        <span class="impact-icon">📻</span>
+        <svg class="impact-icon" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="2"/><path d="M10 16 L14 20 L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <div class="impact-num">+51 %</div>
         <h3>Reichweite Beats Radio</h3>
-        <p>Aufbau und Skalierung der neuen Audio-Brand Beats Radio auf +51 % Reichweite (ma 2025 Audio II › ma 2026 Audio I) bei gleichzeitiger Stabilisierung von Klassik Radio.</p>
+        <p>Aufbau und Skalierung der neuen Audio-Brand Beats Radio (ma 2025 Audio II › ma 2026 Audio I) bei gleichzeitiger Stabilisierung von Klassik Radio.</p>
       </div>
       <div class="impact-card reveal">
-        <span class="impact-icon">🔊</span>
+        <svg class="impact-icon" viewBox="0 0 32 32" fill="none"><path d="M4 24 L10 16 L16 20 L22 10 L28 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 10 L28 10 L28 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <div class="impact-num">+100 %</div>
-        <h3>Organische Streaming-Sessions verdoppelt</h3>
-        <p>Verdopplung der Streaming-Sessions bei Klassik Radio Plus durch neue Plattform-Architektur – und damit zusätzlich direkt vermarktbares Inventar.</p>
+        <h3>Streaming-Sessions verdoppelt</h3>
+        <p>Verdopplung der Streaming-Sessions bei Klassik Radio Plus durch neue Plattform-Architektur – zusätzlich direkt vermarktbares Inventar.</p>
       </div>
       <div class="impact-card reveal">
-        <span class="impact-icon">🤝</span>
+        <svg class="impact-icon" viewBox="0 0 32 32" fill="none"><path d="M6 26 C6 20 14 16 16 16 C18 16 26 20 26 26" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="10" r="5" stroke="currentColor" stroke-width="2"/><path d="M22 8 L26 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M24 12 L28 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         <div class="impact-num">+50 %</div>
         <h3>Barter-Kooperationsvolumen</h3>
-        <p>Steigerung des Kooperationsvolumens um 50 % und erstmalige nationale TV-Kampagnen für Klassik Radio &amp; Beats Radio – über TV, Digital und Print. Zuvor Start nationaler TV- und Print-Kampagnen für die ANTENNE BAYERN GROUP.</p>
+        <p>Steigerung des Kooperationsvolumens und erstmalige nationale TV-Kampagnen für Klassik Radio &amp; Beats Radio über TV, Digital und Print.</p>
       </div>
       <div class="impact-card reveal">
-        <span class="impact-icon">🌐</span>
+        <svg class="impact-icon" viewBox="0 0 32 32" fill="none"><rect x="4" y="6" width="24" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M4 12 L28 12" stroke="currentColor" stroke-width="2"/><path d="M12 28 L20 28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16 24 L16 28" stroke="currentColor" stroke-width="2"/></svg>
         <div class="impact-num">150+</div>
-        <h3>Website- & App-Relaunches</h3>
-        <p>Vollständige digitale Neupositionierung aller KJF-Einrichtungen in 5 Jahren – mit klarer Markenarchitektur und Verdopplung organischer Nutzerzugriffe. Teilprojektleitung bei ANTENNE BAYERN GROUP für Relaunches von ANTENNE BAYERN, ROCK ANTENNE, OLDIE ANTENNE, ANTENNE NRW und NRW1.</p>
+        <h3>Website- &amp; App-Relaunches</h3>
+        <p>Neupositionierung aller KJF-Einrichtungen in 5 Jahren. Teilprojektleitung bei ANTENNE BAYERN GROUP für alle Marken-Relaunches im DACH-Raum.</p>
       </div>
       <div class="impact-card reveal">
-        <span class="impact-icon">💬</span>
+        <svg class="impact-icon" viewBox="0 0 32 32" fill="none"><path d="M6 28 C6 20 10 16 16 16 C22 16 26 20 26 28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="10" r="5" stroke="currentColor" stroke-width="2"/><path d="M10 28 L22 28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         <div class="impact-num">6.000</div>
         <h3>Mitarbeitende vernetzt</h3>
-        <p>Einführung eines mandantenfähigen Social Intranets inkl. DMS mit über 10.000 QM-Dokumenten für die gesamte KJF mit 150 Standorten. Post-Merger-Integration bei einer Klinik-Übernahme mit Change-Kommunikation und Systemintegration.</p>
+        <p>Mandantenfähiges Social Intranet inkl. DMS mit 10.000+ QM-Dokumenten für die KJF mit 150 Standorten. Post-Merger-Integration einer Klinik-Übernahme.</p>
       </div>
       <div class="impact-card reveal">
-        <span class="impact-icon">🤖</span>
+        <svg class="impact-icon" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="10" height="10" rx="1" stroke="currentColor" stroke-width="2"/><rect x="18" y="4" width="10" height="10" rx="1" stroke="currentColor" stroke-width="2"/><rect x="4" y="18" width="10" height="10" rx="1" stroke="currentColor" stroke-width="2"/><path d="M18 23 L28 23 M23 18 L23 28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         <div class="impact-num">+50 %</div>
         <h3>Effizienz-Gewinn</h3>
-        <p>Implementierung unternehmensweiter KI-Workflows und automatisierter KPI-Dashboards – messbare Effizienzsteigerung in der Content-Produktion der ANTENNE BAYERN GROUP und bei Klassik Radio.</p>
+        <p>Unternehmensweite KI-Workflows und automatisierte KPI-Dashboards – messbare Effizienzsteigerung in der Content-Produktion.</p>
       </div>
       <div class="impact-card reveal">
-        <span class="impact-icon">🏆</span>
+        <svg class="impact-icon" viewBox="0 0 32 32" fill="none"><polygon points="16,4 20,12 28,13 22,20 24,28 16,24 8,28 10,20 4,13 12,12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
         <div class="impact-num">★</div>
-        <h3>German Design Award & beste Klinik-Pressestelle</h3>
-        <p>Corporate Design der KJF Augsburg mit dem German Design Award ausgezeichnet. Doppelte Auszeichnung des Klinikum Augsburg in der Top 10 der bundesweit besten Klinik-Pressestellen (KommGe-Award).</p>
+        <h3>German Design Award &amp; Klinik-Pressestelle</h3>
+        <p>German Design Award für das Corporate Design der KJF Augsburg. Doppelte Auszeichnung des Klinikum Augsburg in der Top 10 der besten Klinik-Pressestellen (KommGe-Award).</p>
       </div>
     </div>
   </div>
@@ -513,13 +389,11 @@ footer .f-legal:hover{color:var(--gold)}
       <div class="sec-label">Mehr als der Job</div>
       <h2 class="sec-title">Ehrenamtliches Engagement</h2>
     </div>
-    <!-- Foto links, Karten rechts -->
     <div class="vol-grid reveal">
       <div class="vol-img">
         <img src="raphael-doderer-johanniter.jpeg" alt="Raphael Doderer – Johanniter">
       </div>
       <div class="vol-cards">
-        <!-- 1. Operativ -->
         <div class="vol-card">
           <div class="vol-card-label">Im Einsatz &amp; operative Führung</div>
           <h3>Johanniter-Unfall-Hilfe in Augsburg</h3>
@@ -531,18 +405,16 @@ footer .f-legal:hover{color:var(--gold)}
             <span class="tag">25 Jahre</span>
           </div>
         </div>
-        <!-- 2. Strategisch -->
         <div class="vol-card">
           <div class="vol-card-label">Strategie &amp; Vernetzung</div>
           <h3>Arbeitsgemeinschaft der Augsburger Hilfsorganisationen · Medienbeauftragter im Vorstand</h3>
-          <p>Ehrenamtlicher Medienbeauftragter im Vorstand des Bündnisses von ASB, BRK, DLRG, Johannitern und Maltesern sowie THW. Kommunikationsstrategie, Öffentlichkeitsarbeit und Vernetzung auf überorganisatorischer Ebene – als Networker und Stratege.</p>
-          <p>Bei Großschadenslagen übernehme ich zusätzlich Führungsverantwortung im Einsatzstab – Schnittstelle zwischen operativer Lage und strategischer Kommunikation (u.a. Weihnachtsbombe mit internationaler Berichterstattung).</p>
+          <p>Ehrenamtlicher Medienbeauftragter im Vorstand des Bündnisses von ASB, BRK, DLRG, Johannitern und Maltesern sowie THW. Kommunikationsstrategie, Öffentlichkeitsarbeit und Vernetzung auf überorganisatorischer Ebene.</p>
+          <p>Bei Großschadenslagen Führungsverantwortung im Einsatzstab – Schnittstelle zwischen operativer Lage und strategischer Kommunikation (u.a. Weihnachtsbombe mit internationaler Berichterstattung).</p>
           <div class="vol-tags">
             <span class="tag">Medienbeauftragter</span>
             <span class="tag">Vorstand</span>
             <span class="tag">Stabsdienst</span>
             <span class="tag">Krisenkommunikation</span>
-            <span class="tag">Vernetzung</span>
             <span class="tag">17 Jahre</span>
           </div>
         </div>
@@ -556,14 +428,25 @@ footer .f-legal:hover{color:var(--gold)}
   <div class="section-inner">
     <div class="sec-head reveal">
       <div class="sec-label">Lass uns sprechen</div>
-      <h2 class="sec-title">Kontakt aufnehmen</h2>
+      <h2 class="sec-title sec-title-light">Kontakt aufnehmen</h2>
     </div>
     <div class="contact-solo reveal">
       <p class="contact-lead">Ich freue mich auf den Austausch – ob zu einer konkreten Führungsposition, einem ersten Kennenlernen oder einer neuen Herausforderung, die noch keinen Namen hat.</p>
+      <div class="role-focus">
+        <div class="role-focus-label">Ich bin offen für Gespräche zu</div>
+        <div class="role-focus-chips">
+          <span class="chip chip-solid">CMO</span>
+          <span class="chip chip-solid">CCO</span>
+          <span class="chip chip-solid">CDO</span>
+          <span class="chip chip-outline">Head of Marketing</span>
+          <span class="chip chip-outline">Head of Communications</span>
+          <span class="chip chip-outline">Digitale Transformation</span>
+        </div>
+      </div>
       <div class="c-items">
         <div class="c-item">
           <a class="c-icon-link" href="https://linkedin.com/in/raphael-doderer" target="_blank">
-            <svg viewBox="0 0 44 44" fill="none"><rect width="44" height="44" rx="6" fill="#F0E040"/><path d="M13 18H17V31H13V18ZM15 16.5C13.9 16.5 13 15.6 13 14.5C13 13.4 13.9 12.5 15 12.5C16.1 12.5 17 13.4 17 14.5C17 15.6 16.1 16.5 15 16.5ZM32 31H28V24.5C28 22.8 27.3 22 25.9 22C24.4 22 23.5 23 23.5 24.5V31H19.5V18H23.5V19.8C24.2 18.7 25.5 18 27 18C29.8 18 32 20.2 32 23V31Z" fill="#111111"/></svg>
+            <svg viewBox="0 0 44 44" fill="none"><rect width="44" height="44" rx="6" fill="#F0E040"/><path d="M13 18H17V31H13V18ZM15 16.5C13.9 16.5 13 15.6 13 14.5C13 13.4 13.9 12.5 15 12.5C16.1 12.5 17 13.4 17 14.5C17 15.6 16.1 16.5 15 16.5ZM32 31H28V24.5C28 22.8 27.3 22 25.9 22C24.4 22 23.5 23 23.5 24.5V31H19.5V18H23.5V19.8C24.2 18.7 25.5 18 27 18C29.8 18 32 20.2 32 23V31Z" fill="#111"/></svg>
           </a>
           <div>
             <div class="c-label">LinkedIn</div>
@@ -572,7 +455,7 @@ footer .f-legal:hover{color:var(--gold)}
         </div>
         <div class="c-item">
           <a class="c-icon-link" href="#" onclick="revealContact('email');return false;">
-            <svg viewBox="0 0 44 44" fill="none"><rect width="44" height="44" rx="6" fill="#F0E040"/><path d="M9 13H35C35.6 13 36 13.4 36 14V30C36 30.6 35.6 31 35 31H9C8.4 31 8 30.6 8 30V14C8 13.4 8.4 13 9 13ZM22 24L10 16V28H34V16L22 24ZM10.5 14L22 21.8L33.5 14H10.5Z" fill="#111111"/></svg>
+            <svg viewBox="0 0 44 44" fill="none"><rect width="44" height="44" rx="6" fill="#F0E040"/><path d="M9 13H35C35.6 13 36 13.4 36 14V30C36 30.6 35.6 31 35 31H9C8.4 31 8 30.6 8 30V14C8 13.4 8.4 13 9 13ZM22 24L10 16V28H34V16L22 24ZM10.5 14L22 21.8L33.5 14H10.5Z" fill="#111"/></svg>
           </a>
           <div>
             <div class="c-label">E-Mail</div>
@@ -581,7 +464,7 @@ footer .f-legal:hover{color:var(--gold)}
         </div>
         <div class="c-item">
           <a class="c-icon-link" href="#" onclick="revealContact('phone');return false;">
-            <svg viewBox="0 0 44 44" fill="none"><rect width="44" height="44" rx="6" fill="#F0E040"/><path d="M12 10H18L20 16L17 18C18.4 21 23 25.6 26 27L28 24L34 26V32C34 33.1 33.1 34 32 34C18.7 34 10 25.3 10 12C10 10.9 10.9 10 12 10Z" fill="#111111"/></svg>
+            <svg viewBox="0 0 44 44" fill="none"><rect width="44" height="44" rx="6" fill="#F0E040"/><path d="M12 10H18L20 16L17 18C18.4 21 23 25.6 26 27L28 24L34 26V32C34 33.1 33.1 34 32 34C18.7 34 10 25.3 10 12C10 10.9 10.9 10 12 10Z" fill="#111"/></svg>
           </a>
           <div>
             <div class="c-label">Telefon</div>
@@ -600,51 +483,34 @@ footer .f-legal:hover{color:var(--gold)}
   <a class="f-legal" href="#" onclick="document.getElementById('legal-modal').style.display='flex';return false;">Impressum &amp; Datenschutz</a>
 </footer>
 
-<!-- ── IMPRESSUM & DATENSCHUTZ MODAL ── -->
-<div id="legal-modal" onclick="if(event.target===this)this.style.display='none'"
-     style="display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,0.75);align-items:center;justify-content:center;padding:2rem">
+<!-- ── IMPRESSUM MODAL ── -->
+<div id="legal-modal" onclick="if(event.target===this)this.style.display='none'" style="display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,0.75);align-items:center;justify-content:center;padding:2rem">
   <div style="background:#fff;max-width:640px;width:100%;max-height:80vh;overflow-y:auto;padding:2.5rem;position:relative;border-radius:.25rem">
-    <button onclick="document.getElementById('legal-modal').style.display='none'"
-            style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.4rem;cursor:pointer;color:#444">&times;</button>
-    <h2 style="font-size:1.1rem;font-weight:900;margin-bottom:1.5rem;color:#111">Impressum</h2>
+    <button onclick="document.getElementById('legal-modal').style.display='none'" style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.4rem;cursor:pointer;color:#444">&times;</button>
+    <h2 style="font-size:1.1rem;font-weight:900;margin-bottom:1.5rem">Impressum</h2>
     <p style="font-size:.85rem;color:#444;line-height:1.8;margin-bottom:.5rem"><strong>Angaben gemäß § 5 TMG</strong></p>
-    <p style="font-size:.85rem;color:#444;line-height:1.8;margin-bottom:1.5rem">
-      Raphael Doderer<br>Otto-Sauler-Straße 35<br>86157 Augsburg<br><br>E-Mail: impressum@bered.de
-    </p>
-    <h2 style="font-size:1.1rem;font-weight:900;margin-bottom:1rem;color:#111">Datenschutzerklärung</h2>
+    <p style="font-size:.85rem;color:#444;line-height:1.8;margin-bottom:1.5rem">Raphael Doderer<br>Otto-Sauler-Straße 35<br>86157 Augsburg<br><br>E-Mail: impressum@bered.de</p>
+    <h2 style="font-size:1.1rem;font-weight:900;margin-bottom:1rem">Datenschutzerklärung</h2>
     <p style="font-size:.85rem;color:#444;line-height:1.8;margin-bottom:1rem"><strong>Verantwortlicher:</strong> Raphael Doderer, Otto-Sauler-Straße 35, 86157 Augsburg</p>
-    <p style="font-size:.85rem;color:#444;line-height:1.8;margin-bottom:1rem"><strong>Keine Datenerhebung:</strong> Diese Website erhebt keine personenbezogenen Daten, setzt keine Cookies und verwendet kein Tracking oder Analyse-Tools. Es werden keinerlei Nutzerdaten gespeichert oder an Dritte weitergegeben.</p>
-    <p style="font-size:.85rem;color:#444;line-height:1.8;margin-bottom:1rem"><strong>Kontaktaufnahme:</strong> Wenn Sie per E-Mail oder Telefon Kontakt aufnehmen, werden Ihre Angaben zur Bearbeitung der Anfrage gespeichert. Diese Daten werden nicht ohne Ihre Einwilligung weitergegeben.</p>
-    <p style="font-size:.85rem;color:#444;line-height:1.8;margin-bottom:1rem"><strong>Hosting:</strong> Diese Website wird über GitHub Pages (GitHub Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA) gehostet. GitHub kann beim Abruf der Seite technische Verbindungsdaten (z.B. IP-Adresse) speichern. Weitere Informationen: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" style="color:#111">GitHub Privacy Statement</a>.</p>
-    <p style="font-size:.85rem;color:#444;line-height:1.8"><strong>Ihre Rechte:</strong> Sie haben das Recht auf Auskunft, Berichtigung und Löschung Ihrer gespeicherten Daten sowie das Recht auf Einschränkung der Verarbeitung. Kontakt: impressum@bered.de</p>
+    <p style="font-size:.85rem;color:#444;line-height:1.8;margin-bottom:1rem"><strong>Keine Datenerhebung:</strong> Diese Website erhebt keine personenbezogenen Daten, setzt keine Cookies und verwendet kein Tracking. Es werden keinerlei Nutzerdaten gespeichert oder an Dritte weitergegeben.</p>
+    <p style="font-size:.85rem;color:#444;line-height:1.8;margin-bottom:1rem"><strong>Hosting:</strong> GitHub Pages (GitHub Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA). <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" style="color:#111">GitHub Privacy Statement</a>.</p>
+    <p style="font-size:.85rem;color:#444;line-height:1.8"><strong>Ihre Rechte:</strong> Auskunft, Berichtigung und Löschung Ihrer Daten: impressum@bered.de</p>
   </div>
 </div>
 
 <script>
-// ── Hamburger Menü ──
-const hb=document.getElementById('hamburger');
-const mm=document.getElementById('mobile-menu');
-function closeMobileMenu(){mm.classList.remove('open');hb.classList.remove('open');}
-hb.addEventListener('click',()=>{mm.classList.toggle('open');hb.classList.toggle('open');});
-document.addEventListener('click',e=>{if(!hb.contains(e.target)&&!mm.contains(e.target))closeMobileMenu();});
-
-// ── Kontakt Reveal ──
-const contacts={
-  email:{parts:['r.doderer','@','bered','.de']},
-  phone:{parts:['0151',' ','15627102']}
-};
+const hb=document.getElementById('hamburger'),mm=document.getElementById('mobile-menu');
+function closeMobileMenu(){mm.classList.remove('open');hb.classList.remove('open')}
+hb.addEventListener('click',()=>{mm.classList.toggle('open');hb.classList.toggle('open')});
+document.addEventListener('click',e=>{if(!hb.contains(e.target)&&!mm.contains(e.target))closeMobileMenu()});
+const contacts={email:{parts:['r.doderer','@','bered','.de']},phone:{parts:['0151',' ','15627102']}};
 function revealContact(t){
-  const val=contacts[t].parts.join('');
-  const el=document.getElementById(t+'-link');
-  el.href=(t==='email'?'mailto:':'tel:')+val.replace(/\s/g,'');
-  el.textContent=val;el.onclick=null;
+  const v=contacts[t].parts.join(''),el=document.getElementById(t+'-link');
+  el.href=(t==='email'?'mailto:':'tel:')+v.replace(/\s/g,'');
+  el.textContent=v;el.onclick=null;
 }
-
-// ── Scroll Animationen ──
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
-},{threshold:.08});
-document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
+new IntersectionObserver((e,o)=>e.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target)}}),{threshold:.08}).observe
+&&document.querySelectorAll('.reveal').forEach(r=>new IntersectionObserver((e,o)=>e.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target)}}),{threshold:.08}).observe(r));
 </script>
 </body>
 </html>
