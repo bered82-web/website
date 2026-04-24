@@ -9,8 +9,7 @@
   --gold:#F0E040;--gold2:#F5E96A;
   --black:#111111;--dark:#1a1a1a;--muted:#444;
   --light:#fafaf5;--white:#fff;--border:#111;
-  --radius:.25rem;--radius-lg:.8rem;
-  --max-w:1060px;
+  --radius:.25rem;--max-w:1060px;
 }
 html{scroll-behavior:smooth}
 body{font-family:'Segoe UI',system-ui,sans-serif;color:var(--black);background:var(--light);overflow-x:hidden}
@@ -62,11 +61,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--gold);borde
 .hero-lead span{font-weight:500;opacity:.55}
 .hero-chips{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.2rem}
 .hero-sub{font-size:.88rem;color:var(--dark);line-height:1.8;margin-bottom:1.5rem}
+.hero-ctas{display:flex;gap:.8rem;flex-wrap:wrap}
 .btn-black{background:var(--black);color:var(--gold);padding:.65rem 1.6rem;border-radius:var(--radius);text-decoration:none;font-weight:700;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;transition:opacity .2s}
 .btn-black:hover{opacity:.8}
 .btn-outline{background:transparent;color:var(--black);padding:.65rem 1.6rem;border-radius:var(--radius);text-decoration:none;font-weight:700;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;border:2px solid var(--black);transition:all .2s}
 .btn-outline:hover{background:var(--black);color:var(--gold)}
-.hero-ctas{display:flex;gap:.8rem;flex-wrap:wrap}
 
 /* ── ÜBER MICH ── */
 .about{background:var(--white);border-bottom:2px solid var(--border)}
@@ -80,10 +79,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--gold);borde
 .stat-card .n{font-size:2rem;font-weight:900;color:var(--black);display:block;letter-spacing:-.03em}
 .stat-card .l{font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-top:.3rem;font-weight:600}
 
-/* ── FOTO-BEREICHE (Motto & Beruf) ── */
+/* ── FOTO-SEKTIONEN (Parallax) ── */
 .photo-section{position:relative;min-height:520px;display:flex;align-items:center;justify-content:center;overflow:hidden;border-top:2px solid var(--border);border-bottom:2px solid var(--border)}
-.photo-bg{position:absolute;inset:0;background-size:cover;background-position:center 30%;filter:grayscale(40%) brightness(0.35);transform:scale(1.03);transition:transform 8s ease}
-.photo-section:hover .photo-bg{transform:scale(1.06)}
+.photo-bg{
+  position:absolute;inset:0;
+  background-size:cover;
+  background-position:center center;
+  background-attachment:fixed;
+  filter:grayscale(40%) brightness(0.35);
+  transition:filter .3s ease;
+}
+.photo-section:hover .photo-bg{filter:grayscale(20%) brightness(0.42)}
 .photo-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(17,17,17,.6) 0%,rgba(240,224,64,.08) 50%,rgba(17,17,17,.7) 100%)}
 .photo-accent{position:absolute;left:2.5rem;top:50%;transform:translateY(-50%);width:3px;height:120px;background:linear-gradient(to bottom,transparent,var(--gold),transparent)}
 .photo-content{position:relative;z-index:2;text-align:center;padding:4rem 2.5rem;max-width:800px}
@@ -101,7 +107,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--gold);borde
 .kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0;border:2px solid var(--border);background:var(--border);margin-top:2rem}
 .kpi-card{background:var(--white);padding:1.8rem;text-align:center;transition:background .2s}
 .kpi-card:hover{background:var(--gold)}
-.kpi-card.gold{background:var(--gold)}
 .kpi-num{font-size:2rem;font-weight:900;color:var(--black);letter-spacing:-.03em;display:block;margin-bottom:.4rem}
 .kpi-label{font-size:.7rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
 .kpi-sub{font-size:.68rem;color:var(--muted);margin-top:.2rem}
@@ -198,6 +203,10 @@ footer p{color:rgba(255,255,255,.18);font-size:.72rem;letter-spacing:.08em}
   .nav-contact-icon{display:flex}
   .hero-top{flex-direction:column;align-items:flex-start}
   .photo-accent{display:none}
+  .photo-bg{
+    background-attachment:scroll;
+    background-position:center center;
+  }
 }
 
 /* ── PRINT ── */
@@ -210,7 +219,7 @@ footer p{color:rgba(255,255,255,.18);font-size:.72rem;letter-spacing:.08em}
   .hero{padding:2rem 1rem 1.5rem;border-bottom:2px solid #111}
   .hero-grid{grid-template-columns:140px 1fr;gap:1.5rem}
   .hero-img-wrap img{aspect-ratio:3/4}
-  .tl-section{background:#f5f5f5!important;-webkit-print-color-adjust:exact}
+  .tl-section{background:#f5f5f5!important}
   .tl-org,.tl-year,.tl-ea h4{color:#111!important}
   .tl-role{color:#333!important}
   .tl-desc,.tl-ea p{color:#555!important}
@@ -219,8 +228,7 @@ footer p{color:rgba(255,255,255,.18);font-size:.72rem;letter-spacing:.08em}
   .contact .sec-title{color:#111!important}
   .impact-grid,.comp-grid,.kpi-grid{border-color:#ccc}
   .impact-card,.comp-card,.kpi-card{background:#fff!important;border:1px solid #ddd}
-  .photo-section{display:none!important}
-  footer{background:#fff!important;border-top:1px solid #ddd;color:#999}
+  footer{background:#fff!important;border-top:1px solid #ddd}
   .f-motto,.f-legal{color:#999!important}
   a{color:#111!important;text-decoration:none}
   h1,h2,h3,h4{page-break-after:avoid}
