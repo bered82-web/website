@@ -30,6 +30,18 @@ body{font-family:'Segoe UI',system-ui,sans-serif;color:var(--black);background:v
 .chip-cdo{border-style:dashed!important}
 
 
+/* ── IMPACT INTRO ── */
+.impact-intro{background:var(--white);border-bottom:2px solid var(--border)}
+.impact-intro-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:2px solid var(--border);background:var(--border);margin-top:2rem}
+.impact-intro-item{background:var(--white);padding:1.8rem;transition:background .2s}
+.impact-intro-item:hover{background:var(--gold)}
+.impact-intro-icon{width:44px;height:44px;background:var(--light);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+.impact-intro-item h3{font-size:.88rem;font-weight:800;color:var(--black);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.03em}
+.impact-intro-item p{font-size:.78rem;color:var(--muted);line-height:1.6}
+.impact-intro-cta{display:flex;flex-direction:column;justify-content:center;background:var(--light)!important}
+.impact-intro-cta p{font-size:.85rem;font-weight:600;color:var(--black)}
+@media(max-width:768px){.impact-intro-grid{grid-template-columns:1fr}}
+
 /* ── UTILITY ── */
 .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
 .reveal.visible{opacity:1;transform:none}
