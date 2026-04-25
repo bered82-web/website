@@ -19,7 +19,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;color:var(--black);background:v
 
 /* ── COMP CLUSTER ── */
 .comp-cluster{margin-bottom:0}
-.comp-cluster-label{font-size:.65rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--black);opacity:.4;margin-bottom:.8rem;padding-left:.2rem}
+.comp-cluster-label{font-size:.65rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--black);opacity:.4;margin-bottom:.6rem;display:block}
 .comp-grid-3{grid-template-columns:repeat(3,1fr)!important}
 .comp-grid-2{grid-template-columns:repeat(2,1fr)!important}
 
