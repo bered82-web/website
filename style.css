@@ -17,12 +17,6 @@ body{font-family:'Segoe UI',system-ui,sans-serif;color:var(--black);background:v
 /* ── KPI INTRO ── */
 .kpi-intro{font-size:.88rem;color:var(--muted);line-height:1.8;margin-bottom:1.5rem;font-style:italic;text-align:center}
 
-/* ── COMP CLUSTER ── */
-.comp-cluster{margin-bottom:0}
-.comp-cluster-label{font-size:.65rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--black);opacity:.4;margin-bottom:.6rem;display:block}
-.comp-grid-3{grid-template-columns:repeat(3,1fr)!important}
-.comp-grid-2{grid-template-columns:repeat(2,1fr)!important}
-
 /* ── VOL TRANSFER SATZ ── */
 .vol-transfer{font-weight:700;color:var(--black)!important;font-size:.88rem!important;border-left:3px solid var(--black);padding-left:.8rem;margin:.8rem 0!important}
 
@@ -143,8 +137,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--gold);borde
 
 /* ── KOMPETENZEN ── */
 .competencies{background:var(--gold);border-bottom:2px solid var(--border)}
-.comp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0;border:2px solid var(--border);background:var(--border);margin-top:2rem}
-.comp-card{background:var(--gold);padding:1.6rem;transition:background .2s}
+.comp-cluster-label{font-size:.65rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--black);opacity:.4;margin-bottom:.6rem;display:block}
+.comp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0;border:2px solid var(--border);background:transparent;margin-top:0}
+.comp-card{background:var(--gold);padding:1.6rem;transition:background .2s;border:1px solid var(--border)}
 .comp-card:hover{background:var(--black)}
 .comp-card:hover h3,.comp-card:hover p{color:var(--gold)}
 .comp-card:hover .comp-icon{color:var(--gold)}
@@ -236,6 +231,7 @@ footer p{color:rgba(255,255,255,.18);font-size:.72rem;letter-spacing:.08em}
   .photo-bg{
     background-attachment:scroll;
     background-position:center center;
+   .comp-card{border-right:none}
   }
 }
 
