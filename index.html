@@ -428,7 +428,7 @@
           <h3>Johanniter-Unfall-Hilfe in Augsburg</h3>
           <p>Aktiver Rettungssanitäter im Rettungsdienst und Zugführer im Bevölkerungsschutz – praktisch im Dienst auf Rettungstransportwagen und im Krankentransport, bei Sanitätswachdiensten und Großeinsätzen. Führung unter realen Bedingungen: unter Druck klar denken, schnell entscheiden, Menschenleben verantworten.</p>
           <p class="vol-transfer">Was im Einsatz funktioniert, funktioniert auch im Unternehmen – Struktur, Kommunikation und Vertrauen auch unter Druck.</p>
-          <div class="vol-tags"><span class="tag">Rettungssanitäter</span><span class="tag">Zugführer</span><span class="tag">25 Jahre</span></div>
+          <div class="vol-tags"><span class="tag">Rettungssanitäter</span><span class="tag">Zugführer</span><span class="tag">25+ Jahre</span></div>
         </div>
         <div class="vol-card">
           <div class="vol-card-label">Strategie &amp; Vernetzung</div>
@@ -436,7 +436,7 @@
           <p>Ehrenamtlicher Medienbeauftragter im Vorstand des Bündnisses von ASB, BRK, DLRG, Johannitern und Maltesern sowie THW. Kommunikationsstrategie, Öffentlichkeitsarbeit und Vernetzung auf überorganisatorischer Ebene.</p>
           <p>Bei Großschadenslagen Führungsverantwortung im Einsatzstab – Schnittstelle zwischen operativer Lage (u.a. Weihnachtsbombe 2016 mit internationaler Berichterstattung), strategischer Kommunikation und Lobbyarbeit.</p>
           <p class="vol-transfer">Was im Vorstand funktioniert, funktioniert auch im Unternehmen – Vernetzung, Strategie und Kommunikation auch ohne formale Hierarchie.</p>
-          <div class="vol-tags"><span class="tag">Medienbeauftragter</span><span class="tag">Vorstand</span><span class="tag">Stabsdienst</span><span class="tag">Krisenkommunikation</span><span class="tag">17 Jahre</span></div>
+          <div class="vol-tags"><span class="tag">Medienbeauftragter</span><span class="tag">Vorstand</span><span class="tag">Stabsdienst</span><span class="tag">Krisenkommunikation</span><span class="tag">15+ Jahre</span></div>
         </div>
       </div>
     </div>
@@ -462,6 +462,7 @@
           <span class="chip chip-outline">Head of Communications</span>
           <span class="chip chip-outline">Head of Digitalisation</span>
           <span class="chip chip-outline">Transformation &amp; Management</span>
+          <span class="chip chip-outline">...</span>
         </div>
       </div>
       <div class="c-items">
@@ -516,7 +517,7 @@ const hb=document.getElementById('hamburger'),mm=document.getElementById('mobile
 function closeMobileMenu(){mm.classList.remove('open');hb.classList.remove('open')}
 hb.addEventListener('click',()=>{mm.classList.toggle('open');hb.classList.toggle('open')});
 document.addEventListener('click',e=>{if(!hb.contains(e.target)&&!mm.contains(e.target))closeMobileMenu()});
-const contacts={email:{parts:['r.doderer','@','bered','.de']},phone:{parts:['0151',' ','15627102']}};
+const contacts={email:{parts:['r.doderer','@','bered','.de']},phone:{parts:['+49151',' ','15627102']}};
 function revealContact(t){
   const v=contacts[t].parts.join(''),el=document.getElementById(t+'-link');
   el.href=(t==='email'?'mailto:':'tel:')+v.replace(/\s/g,'');
