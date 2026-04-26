@@ -520,6 +520,12 @@ function revealContact(t){
   el.textContent=v;el.onclick=null;
 }
 document.querySelectorAll('.reveal').forEach(r=>new IntersectionObserver((e,o)=>e.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target)}}),{threshold:.08}).observe(r));
+
+// Modal bei URL-Parameter öffnen
+if(new URLSearchParams(window.location.search).get('impressum')==='1'){
+  document.getElementById('legal-modal').style.display='flex';
+  history.replaceState(null,'','/');
+}
 </script>
 </body>
 </html>
