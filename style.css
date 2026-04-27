@@ -81,7 +81,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--gold);borde
 .hero-grid{display:grid;grid-template-columns:220px 1fr;gap:3rem;align-items:start}
 .hero-img-wrap img{width:100%;display:block;border:2px solid var(--border);object-fit:cover;object-position:top;aspect-ratio:3/4}
 .hero-lead{font-size:1.05rem;font-weight:900;color:var(--black);line-height:1.4;margin-bottom:.8rem}
-.hero-lead span{font-weight:500;opacity:.55}
+.hero-lead span{font-weight:500;opacity:.8}
 .hero-chips{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.2rem}
 /* [FIX] Lesbarkeit: von .88rem auf .92rem */
 .hero-sub{font-size:.92rem;color:var(--dark);line-height:1.8;margin-bottom:1.5rem}
@@ -141,7 +141,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--gold);borde
 
 /* ── KOMPETENZEN ── */
 .competencies{background:var(--gold);border-bottom:2px solid var(--border)}
-.comp-cluster-label{font-size:.65rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--black);opacity:.4;margin-bottom:.6rem;display:block}
+.comp-cluster-label{font-size:.65rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--black);opacity:.65;margin-bottom:.6rem;display:block}
 .comp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0;border:2px solid var(--border);background:transparent;margin-top:0}
 .comp-card{background:var(--gold);padding:1.6rem;transition:background .2s;border:1px solid var(--border)}
 .comp-card:hover{background:var(--black)}
@@ -173,7 +173,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--gold);borde
 .tl-desc{font-size:.82rem;color:rgba(255,255,255,.8);line-height:1.7}
 .tl-extra{margin-top:2rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .tl-ea{background:rgba(240,224,64,.08);border:1px solid rgba(240,224,64,.25);padding:1.3rem}
-.tl-ea h4{color:var(--gold);font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;margin-bottom:.5rem;font-weight:800}
+.tl-ea h3{color:var(--gold);font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;margin-bottom:.5rem;font-weight:800}
 /* [FIX] Lesbarkeit: von rgba(.7) auf rgba(.85) */
 .tl-ea p{color:rgba(255,255,255,.85);font-size:.82rem;line-height:1.7}
 
