@@ -31,7 +31,8 @@ body{font-family:'Segoe UI',system-ui,sans-serif;color:var(--black);background:v
 .impact-intro-item:hover{background:var(--gold)}
 .impact-intro-icon{width:44px;height:44px;background:var(--light);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
 .impact-intro-item h3{font-size:.88rem;font-weight:800;color:var(--black);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.03em}
-.impact-intro-item p{font-size:.78rem;color:var(--muted);line-height:1.6}
+/* [FIX] Lesbarkeit: von .78rem auf .82rem */
+.impact-intro-item p{font-size:.82rem;color:var(--muted);line-height:1.6}
 .impact-intro-cta{display:flex;flex-direction:column;justify-content:center;background:var(--light)!important}
 .impact-intro-cta p{font-size:.85rem;font-weight:600;color:var(--black)}
 @media(max-width:768px){.impact-intro-grid{grid-template-columns:1fr}}
@@ -82,7 +83,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--gold);borde
 .hero-lead{font-size:1.05rem;font-weight:900;color:var(--black);line-height:1.4;margin-bottom:.8rem}
 .hero-lead span{font-weight:500;opacity:.55}
 .hero-chips{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.2rem}
-.hero-sub{font-size:.88rem;color:var(--dark);line-height:1.8;margin-bottom:1.5rem}
+/* [FIX] Lesbarkeit: von .88rem auf .92rem */
+.hero-sub{font-size:.92rem;color:var(--dark);line-height:1.8;margin-bottom:1.5rem}
 .hero-ctas{display:flex;gap:.8rem;flex-wrap:wrap}
 .btn-black{background:var(--black);color:var(--gold);padding:.65rem 1.6rem;border-radius:var(--radius);text-decoration:none;font-weight:700;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;transition:opacity .2s}
 .btn-black:hover{opacity:.8}
@@ -92,7 +94,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--gold);borde
 /* ── ÜBER MICH ── */
 .about{background:var(--white);border-bottom:2px solid var(--border)}
 .about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:4rem;align-items:start}
-.about-grid p{color:var(--muted);line-height:1.85;margin-bottom:1rem;font-size:.9rem}
+/* [FIX] Lesbarkeit: von .9rem auf .95rem */
+.about-grid p{color:var(--muted);line-height:1.85;margin-bottom:1rem;font-size:.95rem}
 .motto-box{background:var(--gold);border:2px solid var(--border);padding:1.5rem 1.8rem;margin-top:1.5rem}
 .motto-box blockquote{font-size:1.1rem;font-weight:700;color:var(--black);line-height:1.6;font-style:italic}
 .motto-box cite{display:block;margin-top:.5rem;font-size:.73rem;color:var(--muted);font-style:normal}
@@ -118,7 +121,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--gold);borde
 .photo-eyebrow{font-size:.68rem;font-weight:800;letter-spacing:.25em;text-transform:uppercase;color:rgba(240,224,64,.6);margin-bottom:1.5rem}
 .photo-quote{font-size:clamp(1.8rem,4.5vw,3.4rem);font-weight:900;color:#fff;line-height:1.05;letter-spacing:-.03em;margin-bottom:1.2rem}
 .photo-quote em{color:var(--gold);font-style:normal}
-.photo-sub{font-size:.92rem;color:rgba(255,255,255,.55);line-height:1.75;max-width:520px;margin:0 auto 2rem}
+/* [FIX] Lesbarkeit: von rgba(.55) auf rgba(.75) – weißer Text auf dunklem Foto */
+.photo-sub{font-size:.95rem;color:rgba(255,255,255,.75);line-height:1.75;max-width:520px;margin:0 auto 2rem}
 .photo-divider{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1.5rem}
 .photo-divider-line{width:60px;height:1px;background:rgba(240,224,64,.3)}
 .photo-divider-dot{width:6px;height:6px;border-radius:50%;background:var(--gold)}
@@ -145,7 +149,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--gold);borde
 .comp-card:hover .comp-icon{color:var(--gold)}
 .comp-icon{width:36px;height:36px;margin-bottom:.8rem;display:block}
 .comp-card h3{font-size:.85rem;font-weight:800;color:var(--black);margin-bottom:.5rem;letter-spacing:.02em;text-transform:uppercase;transition:color .2s}
-.comp-card p{font-size:.78rem;color:var(--dark);line-height:1.65;transition:color .2s}
+/* [FIX] Lesbarkeit: von .78rem auf .82rem */
+.comp-card p{font-size:.82rem;color:var(--dark);line-height:1.65;transition:color .2s}
 
 
 /* ── TIMELINE ── */
@@ -160,14 +165,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--gold);borde
 .tl-year{font-size:.68rem;color:var(--gold);letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin-bottom:.4rem}
 .tl-org{font-size:.9rem;font-weight:800;color:#fff}
 .tl-right{padding:1.5rem}
-.tl-role{font-size:.82rem;color:rgba(255,255,255,.75);margin-bottom:.6rem;line-height:1.5}
+/* [FIX] Lesbarkeit: von rgba(.75) auf rgba(.9) */
+.tl-role{font-size:.85rem;color:rgba(255,255,255,.9);margin-bottom:.6rem;line-height:1.5}
 .tl-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin:.5rem 0}
 .tl-tag{background:rgba(240,224,64,.15);border:1px solid rgba(240,224,64,.35);border-radius:2rem;padding:.15rem .65rem;font-size:.65rem;color:var(--gold);letter-spacing:.06em}
-.tl-desc{font-size:.8rem;color:rgba(255,255,255,.6);line-height:1.7}
+/* [FIX] Lesbarkeit: von rgba(.6) auf rgba(.8) + font-size .82rem */
+.tl-desc{font-size:.82rem;color:rgba(255,255,255,.8);line-height:1.7}
 .tl-extra{margin-top:2rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .tl-ea{background:rgba(240,224,64,.08);border:1px solid rgba(240,224,64,.25);padding:1.3rem}
 .tl-ea h4{color:var(--gold);font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;margin-bottom:.5rem;font-weight:800}
-.tl-ea p{color:rgba(255,255,255,.7);font-size:.8rem;line-height:1.7}
+/* [FIX] Lesbarkeit: von rgba(.7) auf rgba(.85) */
+.tl-ea p{color:rgba(255,255,255,.85);font-size:.82rem;line-height:1.7}
 
 /* ── IMPACT DETAIL ── */
 .impact{background:var(--white);border-bottom:2px solid var(--border)}
@@ -177,7 +185,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--gold);borde
 .impact-icon{width:32px;height:32px;margin-bottom:.7rem;display:block}
 .impact-num{font-size:1.6rem;font-weight:900;color:var(--black);margin-bottom:.3rem;letter-spacing:-.03em}
 .impact-card h3{font-size:.82rem;font-weight:800;color:var(--black);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.03em}
-.impact-card p{font-size:.76rem;color:var(--muted);line-height:1.6}
+/* [FIX] Lesbarkeit: von .76rem auf .82rem */
+.impact-card p{font-size:.82rem;color:var(--muted);line-height:1.6}
 
 /* ── EHRENAMT ── */
 .volunteer{background:var(--gold);border-bottom:2px solid var(--border)}
@@ -187,7 +196,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--gold);borde
 .vol-card{background:var(--white);border:2px solid var(--border);padding:1.5rem 1.8rem}
 .vol-card-label{font-size:.65rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
 .vol-card h3{font-size:.95rem;font-weight:800;color:var(--black);margin-bottom:.8rem}
-.vol-card p{color:var(--dark);line-height:1.75;font-size:.83rem;margin-bottom:.6rem}
+/* [FIX] Lesbarkeit: von .83rem auf .88rem */
+.vol-card p{color:var(--dark);line-height:1.75;font-size:.88rem;margin-bottom:.6rem}
 .vol-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.6rem}
 .tag{background:var(--black);color:var(--gold);border-radius:2rem;padding:.25rem .8rem;font-size:.7rem;font-weight:600;letter-spacing:.06em}
 
@@ -197,7 +207,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--gold);borde
 .contact .sec-label{color:var(--gold)}
 .contact .sec-head{border-bottom-color:rgba(255,255,255,.15)}
 .contact-solo{max-width:520px;margin-top:1.5rem}
-.contact-lead{color:rgba(255,255,255,.8);line-height:1.85;margin-bottom:1.5rem;font-size:.9rem}
+/* [FIX] Lesbarkeit: von rgba(.8) auf rgba(.9) */
+.contact-lead{color:rgba(255,255,255,.9);line-height:1.85;margin-bottom:1.5rem;font-size:.95rem}
 .role-focus{background:var(--gold);border:2px solid var(--border);padding:1.2rem 1.5rem;margin-bottom:2rem}
 .role-focus-label{font-size:.65rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
 .role-focus-chips{display:flex;flex-wrap:wrap;gap:.4rem}
@@ -206,15 +217,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--gold);borde
 .c-icon-link{width:44px;height:44px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:opacity .2s}
 .c-icon-link:hover{opacity:.75}
 .c-icon-link svg{width:44px;height:44px;display:block}
-.c-label{font-size:.62rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.14em;margin-bottom:.15rem;font-weight:700}
-.c-val{color:rgba(255,255,255,.9);font-size:.9rem;cursor:pointer;transition:color .2s;text-decoration:none;display:block}
+/* [FIX] Kontrast: von rgba(.5) auf rgba(.7) */
+.c-label{font-size:.62rem;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.14em;margin-bottom:.15rem;font-weight:700}
+/* [FIX] Kontrast: von rgba(.9) auf #fff */
+.c-val{color:#fff;font-size:.9rem;cursor:pointer;transition:color .2s;text-decoration:none;display:block}
 .c-val:hover{color:var(--gold)}
 
 /* ── FOOTER ── */
 footer{background:#000;padding:1.5rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;border-top:1px solid rgba(240,224,64,.15)}
-footer p{color:rgba(255,255,255,.18);font-size:.72rem;letter-spacing:.08em}
-.f-motto{color:rgba(240,224,64,.3);font-size:.72rem;font-style:italic}
-.f-legal{color:rgba(240,224,64,.3);font-size:.72rem;text-decoration:none;cursor:pointer}
+/* [FIX] Kontrast: Copyright-Text von rgba(.18) auf rgba(.55) – war quasi unsichtbar */
+footer p{color:rgba(255,255,255,.55);font-size:.72rem;letter-spacing:.08em}
+/* [FIX] Kontrast: Motto von rgba(.3) auf rgba(.6) */
+.f-motto{color:rgba(240,224,64,.6);font-size:.72rem;font-style:italic}
+/* [FIX] Kontrast: Impressum/Datenschutz von rgba(.3) auf rgba(.8) – war kaum klickbar erkennbar */
+.f-legal{color:rgba(240,224,64,.8);font-size:.72rem;text-decoration:none;cursor:pointer}
 .f-legal:hover{color:var(--gold)}
 
 /* ── RESPONSIVE ── */
@@ -231,8 +247,8 @@ footer p{color:rgba(255,255,255,.18);font-size:.72rem;letter-spacing:.08em}
   .photo-bg{
     background-attachment:scroll;
     background-position:center center;
-   .comp-card{border-right:none}
   }
+  .comp-card{border-right:none}
 }
 
 /* ── PRINT ── */
