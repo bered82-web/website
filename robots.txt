@@ -1,2 +1,4 @@
 User-agent: *
-Disallow:
+Disallow: /personal-grounding-page-template.html
+
+Sitemap: https://www.bered.de/sitemap.xml
