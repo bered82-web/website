@@ -545,8 +545,7 @@
 <script>
 const hb=document.getElementById('hamburger'),mm=document.getElementById('mobile-menu');
 function closeMobileMenu(){mm.classList.remove('open');hb.classList.remove('open')}
-hb.addEventListener('click',()=>{mm.classList.toggle('open');hb.classList.toggle('open')});
-document.addEventListener('click',e=>{if(!hb.contains(e.target)&&!mm.contains(e.target))closeMobileMenu()});
+hb.addEventListener('click',()=>{const isOpen=mm.classList.toggle('open');hb.classList.toggle('open');hb.setAttribute('aria-label',isOpen?'Menü schließen':'Menü öffnen')});document.addEventListener('click',e=>{if(!hb.contains(e.target)&&!mm.contains(e.target))closeMobileMenu()});
 const contacts={email:{parts:['r.doderer','@','bered','.de']},phone:{parts:['+49151',' ','15627102']}};
 function revealContact(t){
   const v=contacts[t].parts.join(''),el=document.getElementById(t+'-link');
