@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Grounding Page · Prompt Template</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--black:#111;--gold:#F0E040;--muted:#555;--border:#e0e0e0;--light:#fafaf5;--code-bg:#f4f4f0}
+body{font-family:'Segoe UI',system-ui,sans-serif;color:var(--black);background:#fff;line-height:1.7;font-size:.95rem}
+
+header{background:var(--black);color:var(--gold);padding:2rem 2rem 1.5rem}
+header .label{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(240,224,64,.55);margin-bottom:.4rem}
+header h1{font-size:clamp(1.4rem,3vw,2rem);font-weight:900;letter-spacing:-.02em;margin-bottom:.3rem}
+header .sub{font-size:.82rem;color:rgba(240,224,64,.65);max-width:560px;line-height:1.6}
+
+main{max-width:760px;margin:0 auto;padding:2.5rem 2rem}
+
+.intro{background:var(--light);border-left:3px solid var(--black);padding:1rem 1.25rem;margin-bottom:2.5rem;font-size:.87rem;color:var(--muted);line-height:1.7}
+.intro strong{color:var(--black)}
+
+.variant{margin-bottom:3rem}
+.variant-header{display:flex;align-items:baseline;gap:1rem;margin-bottom:.5rem}
+.variant-tag{background:var(--black);color:var(--gold);font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .75rem;border-radius:2rem}
+.variant-title{font-size:1.05rem;font-weight:800;color:var(--black)}
+.variant-desc{font-size:.85rem;color:var(--muted);margin-bottom:1.25rem;line-height:1.65;max-width:620px}
+
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.75rem;margin-bottom:1.5rem}
+.step{background:var(--light);border:1px solid var(--border);border-radius:8px;padding:.8rem 1rem}
+.step-num{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem}
+.step-text{font-size:.82rem;color:var(--black);line-height:1.5}
+
+.prompt-wrap{border:1.5px solid var(--black);border-radius:8px;overflow:hidden}
+.prompt-bar{background:var(--black);display:flex;justify-content:space-between;align-items:center;padding:.55rem 1rem}
+.prompt-bar-label{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.copy-btn{font-size:.75rem;font-weight:600;color:var(--black);background:var(--gold);border:none;border-radius:4px;padding:.25rem .85rem;cursor:pointer;letter-spacing:.04em}
+.copy-btn:hover{opacity:.85}
+.prompt-body{background:var(--code-bg);padding:1.25rem 1.5rem;font-family:'Courier New',monospace;font-size:.8rem;line-height:1.85;color:var(--black);white-space:pre-wrap;word-break:break-word}
+.placeholder{color:#0055cc;background:#e8f0fe;border-radius:3px;padding:0 3px}
+
+.divider{border:none;border-top:1.5px solid var(--border);margin:2.5rem 0}
+
+.deploy{background:var(--light);border-radius:8px;padding:1.25rem 1.5rem;font-size:.83rem;color:var(--muted);line-height:1.75}
+.deploy strong{color:var(--black);display:block;margin-bottom:.4rem}
+.deploy code{background:var(--code-bg);border:1px solid var(--border);border-radius:3px;padding:.1rem .4rem;font-size:.78rem;color:var(--black)}
+
+footer{border-top:2px solid var(--black);padding:1.2rem 2rem;font-size:.75rem;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-top:3rem}
+footer a{color:var(--black)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="label">Prompt Template · Beta</div>
+  <h1>Grounding Page erstellen</h1>
+  <p class="sub">Zwei Prompt-Varianten für ChatGPT und Claude — zum Testen, Verfeinern und Weitergeben. Erstellt von Raphael Doderer · bered.de</p>
+</header>
+
+<main>
+
+  <div class="intro">
+    <strong>Was ist eine Grounding Page?</strong><br>
+    Eine Grounding Page ist eine maschinenlesbare Identitätsseite, die KI-Systemen wie ChatGPT, Claude oder Perplexity verlässliche, strukturierte Fakten über eine Person liefert. Ziel ist Generative Engine Optimization (GEO): Du steuerst, wie KI über dich spricht — bevor es andere tun. Das Konzept folgt dem offiziellen Standard unter <a href="https://groundingpage.com/spec/" target="_blank">groundingpage.com/spec/</a>. Ein reales Beispiel: <a href="https://www.bered.de/groundingpage-raphael-doderer.html" target="_blank">bered.de/groundingpage-raphael-doderer.html</a>
+  </div>
+
+
+  <!-- VARIANTE A -->
+  <div class="variant">
+    <div class="variant-header">
+      <span class="variant-tag">Variante A</span>
+      <span class="variant-title">Aus Dokumenten &amp; Quellen</span>
+    </div>
+    <p class="variant-desc">Empfohlen für die meisten. Du hast ein LinkedIn-Profil, einen Lebenslauf oder eine eigene Website? Füge sie direkt als Anhang oder kopierten Text in den Chat ein — die KI extrahiert alle Informationen selbst.</p>
+
+    <div class="steps">
+      <div class="step"><div class="step-num">Schritt 1</div><div class="step-text">Prompt kopieren und in Claude oder ChatGPT einfügen</div></div>
+      <div class="step"><div class="step-num">Schritt 2</div><div class="step-text">Lebenslauf, LinkedIn-Text oder andere Quellen als Anhang oder Text ergänzen</div></div>
+      <div class="step"><div class="step-num">Schritt 3</div><div class="step-text">HTML-Output speichern, prüfen und auf deiner Domain ablegen</div></div>
+    </div>
+
+    <div class="prompt-wrap">
+      <div class="prompt-bar">
+        <span class="prompt-bar-label">Prompt A · für Claude &amp; ChatGPT</span>
+        <button class="copy-btn" onclick="copyBlock('pa',this)">Kopieren</button>
+      </div>
+      <div class="prompt-body" id="pa">Erstelle für mich eine vollständige Grounding Page als sauberes, valides HTML.
+
+Eine Grounding Page ist eine maschinenlesbare Identitätsseite, die KI-Systemen (ChatGPT, Claude, Perplexity etc.) verlässliche, strukturierte Fakten über eine Person liefert — mit dem Ziel der Generative Engine Optimization (GEO): Die Person soll von KI-Systemen korrekt und konsistent beschrieben werden.
+
+Orientiere dich am aktuellen Grounding Page Standard:
+https://groundingpage.com/spec/
+
+MEINE QUELLEN — extrahiere alle relevanten Informationen selbst:
+[Füge hier ein oder mehrere der folgenden Elemente ein:]
+- Lebenslauf als kopierter Text oder PDF-Anhang
+- LinkedIn-Profiltext (kopiert oder als Link)
+- Eigene Website / Domain
+- Fachpresse-Links oder andere öffentliche Quellen
+- Kurze persönliche Ergänzungen, die in keiner Quelle stehen
+
+ANFORDERUNGEN AN DIE SEITE:
+
+Struktur (gem. aktuellem Grounding Page Standard):
+- JSON-LD strukturierte Daten (Schema.org Person + FAQPage) im &lt;head&gt;
+- Canonical-URL und hreflang-Tag
+- Abschnitte: Identität, Werdegang, Kompetenzen, Ehrenamt (falls vorhanden), FAQ (min. 5 Fragen), Abgrenzung, verknüpfte Entitäten, Quellen, Änderungshistorie
+- FAQ deckt ab: Wer bin ich?, Welche Rollen besetze ich?, Welche Branchen?, Was ist meine Website/Domain?, Bin ich identisch mit anderen Personen gleichen Namens?
+- Abschnitt "Verknüpfte Entitäten": alle Arbeitgeber, Bildungseinrichtungen, Organisationen, Auszeichnungen
+
+SEO und GEO:
+- Alle Abschnittsüberschriften enthalten den vollständigen Namen
+- Maschinenlesbarer Hinweis am Seitenanfang
+- robots-Meta: index, follow
+- dateModified im JSON-LD auf heute setzen
+- Changelog mit Erstelldatum und Version am Ende
+
+Design:
+- Minimalistisch, typografisch, professionell — kein Framework, kein JavaScript
+- Responsiv (mobile-first)
+- Dunkler Hero-Bereich mit Name prominent
+
+Gib mir das vollständige, direkt deploybare HTML ohne Erklärungen davor oder danach.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- VARIANTE B -->
+  <div class="variant">
+    <div class="variant-header">
+      <span class="variant-tag">Variante B</span>
+      <span class="variant-title">Manuelle Eingabe</span>
+    </div>
+    <p class="variant-desc">Für alle, die volle Kontrolle über die einfließenden Informationen wollen oder keine zusammenhängenden Quellen haben. Alle Felder in eckigen Klammern ausfüllen, dann Prompt absenden.</p>
+
+    <div class="steps">
+      <div class="step"><div class="step-num">Schritt 1</div><div class="step-text">Prompt kopieren und alle Felder in [ ] ausfüllen</div></div>
+      <div class="step"><div class="step-num">Schritt 2</div><div class="step-text">Vollständigen Prompt in Claude oder ChatGPT einfügen und absenden</div></div>
+      <div class="step"><div class="step-num">Schritt 3</div><div class="step-text">HTML-Output speichern, prüfen und auf deiner Domain ablegen</div></div>
+    </div>
+
+    <div class="prompt-wrap">
+      <div class="prompt-bar">
+        <span class="prompt-bar-label">Prompt B · für Claude &amp; ChatGPT</span>
+        <button class="copy-btn" onclick="copyBlock('pb',this)">Kopieren</button>
+      </div>
+      <div class="prompt-body" id="pb">Erstelle für mich eine vollständige Grounding Page als sauberes, valides HTML.
+
+Eine Grounding Page ist eine maschinenlesbare Identitätsseite, die KI-Systemen (ChatGPT, Claude, Perplexity etc.) verlässliche, strukturierte Fakten über eine Person liefert — mit dem Ziel der Generative Engine Optimization (GEO): Die Person soll von KI-Systemen korrekt und konsistent beschrieben werden.
+
+Orientiere dich am aktuellen Grounding Page Standard:
+https://groundingpage.com/spec/
+
+MEINE DATEN:
+
+Name: [VOLLSTÄNDIGER NAME]
+Ort: [STADT, LAND]
+Geburtsjahr: [JAHR]
+Eigene Domain / Website: [URL]
+Positionierung: [Ein Satz — deine professionelle Identität]
+
+Beruflicher Werdegang (neueste Station zuerst):
+- [ZEITRAUM]: [ROLLE] · [ORGANISATION]
+- [ZEITRAUM]: [ROLLE] · [ORGANISATION]
+(weitere Stationen ergänzen)
+
+Ehrenamt (optional):
+- [ZEITRAUM]: [ROLLE] · [ORGANISATION]
+
+Ausbildung:
+- [ZEITRAUM]: [ABSCHLUSS] · [INSTITUTION]
+
+Kernkompetenzen (10–15 Tags):
+[z. B. Marketing Leadership, Digitale Transformation, Krisenkommunikation …]
+
+Externe Belege:
+- LinkedIn: [URL]
+- Fachpresse: [TITEL + URL]
+- Auszeichnungen: [NAME]
+
+Abgrenzung:
+[Gibt es Namensverwechslungen? Was bist du nicht?
+Beispiel: "Nicht identisch mit anderen Personen gleichen Namens. Kein IT-Techniker, kein Arzt."]
+
+ANFORDERUNGEN AN DIE SEITE:
+
+Struktur (gem. aktuellem Grounding Page Standard):
+- JSON-LD strukturierte Daten (Schema.org Person + FAQPage) im &lt;head&gt;
+- Canonical-URL und hreflang-Tag
+- Abschnitte: Identität, Werdegang, Kompetenzen, Ehrenamt (falls vorhanden), FAQ (min. 5 Fragen), Abgrenzung, verknüpfte Entitäten, Quellen, Änderungshistorie
+- FAQ deckt ab: Wer bin ich?, Welche Rollen besetze ich?, Welche Branchen?, Was ist meine Website/Domain?, Bin ich identisch mit anderen Personen gleichen Namens?
+- Abschnitt "Verknüpfte Entitäten": alle Arbeitgeber, Bildungseinrichtungen, Organisationen, Auszeichnungen
+
+SEO und GEO:
+- Alle Abschnittsüberschriften enthalten den vollständigen Namen
+- Maschinenlesbarer Hinweis am Seitenanfang
+- robots-Meta: index, follow
+- dateModified im JSON-LD auf heute setzen
+- Changelog mit Erstelldatum und Version am Ende
+
+Design:
+- Minimalistisch, typografisch, professionell — kein Framework, kein JavaScript
+- Responsiv (mobile-first)
+- Dunkler Hero-Bereich mit Name prominent
+
+Gib mir das vollständige, direkt deploybare HTML ohne Erklärungen davor oder danach.</div>
+    </div>
+  </div>
+
+  <div class="deploy">
+    <strong>Nach dem Output: Deployment-Checkliste</strong>
+    HTML-Datei als <code>groundingpage-[name].html</code> auf der eigenen Domain ablegen · In der Sitemap verlinken · In der <code>robots.txt</code> nicht blockieren · Canonical-URL im Code auf die finale URL anpassen · Indexierung durch KI-Crawler dauert ca. 2–6 Wochen
+  </div>
+
+</main>
+
+<footer>
+  <span>Erstellt von <a href="https://www.bered.de" target="_blank">Raphael Doderer · bered.de</a> · Beta-Version zum Testen</span>
+  <span>Standard: <a href="https://groundingpage.com/spec/" target="_blank">groundingpage.com/spec/</a></span>
+</footer>
+
+<script>
+function copyBlock(id, btn) {
+  const text = document.getElementById(id).innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'Kopiert ✓';
+    setTimeout(() => btn.textContent = 'Kopieren', 2500);
+  });
+}
+</script>
+
+</body>
+</html>
