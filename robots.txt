@@ -20,4 +20,7 @@ Allow: /
 User-agent: Amazonbot
 Allow: /
 
+# AI context
+Llms: https://www.bered.de/llms.txt
+
 Sitemap: https://www.bered.de/sitemap.xml
