@@ -569,7 +569,7 @@
 
 <!-- ── FOOTER ── -->
 <footer>
-  <p>&copy; 2026 Raphael Doderer &nbsp;·&nbsp; Augsburg</p>
+  <p>&copy; 2026 Raphael Doderer  ·  Augsburg</p>
   <span class="f-motto">Miteinander füreinander da sein.</span>
   <a class="f-legal" href="https://www.bered.de?impressum=1">Impressum &amp; Datenschutz</a>
   <a class="f-legal" href="/groundingpage-raphael-doderer.html">Grounding Page</a>
@@ -626,7 +626,7 @@ function revealContact(t){
   el.href=(t==='email'?'mailto:':'tel:')+v.replace(/\s/g,'');
   el.textContent=v;el.onclick=null;
 }
-document.querySelectorAll('.reveal').forEach(r=>new IntersectionObserver((e,o)=>e.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target)}}),{threshold:.08}).observe(r));
+document.querySelectorAll('.reveal').forEach(r=>new IntersectionObserver((e,o)=>e.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target)}}),{threshold:0,rootMargin:'0px 0px 200px 0px'}).observe(r));
 
 // Modal bei URL-Parameter öffnen
 if(new URLSearchParams(window.location.search).get('impressum')==='1'){
